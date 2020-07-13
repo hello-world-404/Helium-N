@@ -5,18 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Helium"
         mc:Ignorable="d"
-        Title="Helium" Height="452" Width="769" WindowStartupLocation="CenterScreen">
+        Title="Helium" Height="467" Width="769" WindowStartupLocation="CenterScreen">
     <Grid>
         <ComboBox HorizontalAlignment="Left" Margin="40,140,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="重启" PreviewMouseDown="ComboBoxItem_PreviewMouseDown"/>
-            <ComboBoxItem Content="重启"/>
-            <ComboBoxItem Content="重启"/>
-            <ComboBoxItem Content="重启"/>
-            <ComboBoxItem Content="重启"/>
+            <ComboBoxItem Content="重启" PreviewMouseDown="reboot"/>
+            <ComboBoxItem Content="重启至REC" PreviewMouseDown="rebootToRec" />
+            <ComboBoxItem Content="重启至BL" PreviewMouseDown="rebootToBL"/>
+            <ComboBoxItem Content="关机" PreviewMouseDown="shutdown"/>
+            <ComboBoxItem Content="检测Fastboot设备" PreviewMouseDown="checkFastbootDevices"/>
+            <ComboBoxItem Content="检测ADB设备" PreviewMouseDown="checkADBDevices"/>
+            <ComboBoxItem Content="设备型号" PreviewMouseDown="getModelNumber"/>
+            <ComboBoxItem Content="系统信息" PreviewMouseDown="getSysInfo"/>
+            <ComboBoxItem Content="安装应用" PreviewMouseDown="installApk"/>
+            <ComboBoxItem Content="卸载应用" PreviewMouseDown="uninstallApk"/>
+            <ComboBoxItem Content="传送文件" PreviewMouseDown="pushFile"/>
+            <ComboBoxItem Content="截图" PreviewMouseDown="takeScreenshot"/>
+            <ComboBoxItem Content="录屏" PreviewMouseDown="recordScreen"/>
+            <ComboBoxItem Content="电池信息" PreviewMouseDown="getBatteryInfo"/>
         </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="240,140,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="420,140,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="600,140,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="240,140,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Loops 壁纸"/>
+            <ComboBoxItem Content="启用药丸导航"/>
+            <ComboBoxItem Content="启用“环”时钟"/>
+            <ComboBoxItem Content="开启白色主题"/>
+            <ComboBoxItem/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="420,140,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="切换认证服务器"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="600,140,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="冰箱"/>
+            <ComboBoxItem Content="小黑屋"/>
+            <ComboBoxItem Content="空调狗"/>
+            <ComboBoxItem Content="Shizuku"/>
+            <ComboBoxItem Content="黑阈"/>
+            <ComboBoxItem/>
+        </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="40,120,0,0" TextWrapping="Wrap" Text="ADB 功能" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="240,120,0,0" TextWrapping="Wrap" Text="Xperia功能" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="420,120,0,0" TextWrapping="Wrap" Text="原生功能" VerticalAlignment="Top"/>
