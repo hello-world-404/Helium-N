@@ -1,0 +1,18 @@
+﻿<Window x:Class="Helium.switchAuthServerSplash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Helium"
+        mc:Ignorable="d"
+        Title="切换认证服务器" Height="352" Width="249" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="画板 1@3x.png">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="243" Background="#FFFFFDCD">
+            <TextBlock HorizontalAlignment="Left" Margin="20,30,0,0" TextWrapping="Wrap" Text="验证服务器" VerticalAlignment="Top" FontSize="20"/>
+            <CheckBox x:Name="http" Content="HTTP" HorizontalAlignment="Left" Margin="160,24,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="https" Content="HTTPS" HorizontalAlignment="Left" Margin="160,44,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Button Content="小米" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Width="200" BorderBrush="Transparent" Click="authXiaomi"/>
+        <Button Content="V2EX" HorizontalAlignment="Left" Margin="20,124,0,0" VerticalAlignment="Top" Width="200" BorderBrush="Transparent" Click="authV2ex"/>
+    </Grid>
+</Window>
