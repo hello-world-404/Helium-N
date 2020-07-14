@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Helium
 {
@@ -50,7 +38,7 @@ namespace Helium
                 System.Diagnostics.Process.Start("cmd.exe", MainWindow.commandType + "adb shell settings delete global captive_portal_https_url");
                 System.Diagnostics.Process.Start("cmd.exe", MainWindow.commandType + "adb shell settings put global captive_portal_https_url " + httpsAuthServer);
             }
-            else if((bool)https.IsChecked && (bool)http.IsChecked)
+            else if ((bool)https.IsChecked && (bool)http.IsChecked)
             {
                 System.Diagnostics.Process.Start("cmd.exe", MainWindow.commandType + "adb shell settings delete global captive_portal_http_url");
                 System.Diagnostics.Process.Start("cmd.exe", MainWindow.commandType + "adb shell settings put global captive_portal_http_url " + httpAuthServer);
@@ -61,7 +49,7 @@ namespace Helium
             {
                 MessageBox.Show("未选择连接方式！", "错误！", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
-            
+
         }
     }
 }

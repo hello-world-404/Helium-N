@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helium", "Helium.csproj", "{BD988746-165C-4EF3-8AB9-11B737B57E12}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Helium-Deploy", "Helium-Deploy\Helium-Deploy.vdproj", "{B8392960-469E-4A5A-AD2F-939A0C2BE2E9}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Helium-Deploy", "Helium-Deploy\Helium-Deploy\Helium-Deploy.vdproj", "{D0E3A50D-A371-4AAC-B810-ADDFE2FAA4AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,12 +13,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8392960-469E-4A5A-AD2F-939A0C2BE2E9}.Debug|Any CPU.ActiveCfg = Debug
-		{B8392960-469E-4A5A-AD2F-939A0C2BE2E9}.Release|Any CPU.ActiveCfg = Release
+		{D0E3A50D-A371-4AAC-B810-ADDFE2FAA4AC}.Debug|Any CPU.ActiveCfg = Debug
+		{D0E3A50D-A371-4AAC-B810-ADDFE2FAA4AC}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
