@@ -5,64 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Helium"
         mc:Ignorable="d"
-        Title="Helium" Height="511" Width="769" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="画板 1@3x.png">
+        Title="Helium" Height="511" Width="769" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="40,140,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="重启" PreviewMouseDown="reboot"/>
-            <ComboBoxItem Content="重启至REC" PreviewMouseDown="rebootToRec" />
-            <ComboBoxItem Content="重启至BL" PreviewMouseDown="rebootToBL"/>
-            <ComboBoxItem Content="关机" PreviewMouseDown="shutdown"/>
-            <ComboBoxItem Content="检测Fastboot设备" PreviewMouseDown="checkFastbootDevices"/>
-            <ComboBoxItem Content="检测ADB设备" PreviewMouseDown="checkADBDevices"/>
-            <ComboBoxItem Content="设备型号" PreviewMouseDown="getModelNumber"/>
-            <ComboBoxItem Content="系统信息" PreviewMouseDown="getSysInfo"/>
-            <ComboBoxItem Content="安装应用" PreviewMouseDown="installApk"/>
-            <ComboBoxItem Content="卸载应用" PreviewMouseDown="uninstallApk"/>
-            <ComboBoxItem Content="截图" PreviewMouseDown="takeScreenshot"/>
-            <ComboBoxItem Content="录屏" PreviewMouseDown="recordScreen"/>
-            <ComboBoxItem Content="电池信息" PreviewMouseDown="getBatteryInfo"/>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="240,140,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="Loops 壁纸" PreviewMouseDown="installLoops"/>
-            <!--
-            <ComboBoxItem Content="启用药丸导航"/>
-            <ComboBoxItem Content="启用环时钟"/>
-            <ComboBoxItem Content="开启白色主题"/>-->
-            <ComboBoxItem/>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="420,140,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="切换认证服务器" PreviewMouseDown="launchAuthServerPage"/>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="600,140,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="冰箱"/>
-            <ComboBoxItem Content="小黑屋"/>
-            <ComboBoxItem Content="空调狗"/>
-            <ComboBoxItem Content="Shizuku"/>
-            <ComboBoxItem Content="黑阈"/>
-            <ComboBoxItem/>
-        </ComboBox>
-        <TextBlock HorizontalAlignment="Left" Margin="40,120,0,0" TextWrapping="Wrap" Text="ADB 功能" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="240,120,0,0" TextWrapping="Wrap" Text="Xperia功能" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="420,120,0,0" TextWrapping="Wrap" Text="原生功能" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="600,120,0,0" TextWrapping="Wrap" Text="服务激活" VerticalAlignment="Top"/>
-        <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="761" Background="#FFFFFDCD">
+        <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="648" Background="#FFE5E5E5" Margin="97,130,0,0">
             <TextBlock HorizontalAlignment="Left" Margin="40,30,0,0" TextWrapping="Wrap" Text="Helium" VerticalAlignment="Top" FontSize="20"/>
             <CheckBox x:Name="verbose" Content="Verbose" HorizontalAlignment="Left" Margin="655,34,0,0" VerticalAlignment="Top"/>
             <!--<CheckBox x:Name="safeMode" Content="安全模式" HorizontalAlignment="Left" Margin="650,48,0,0" VerticalAlignment="Top"/>-->
-            <Button Content="Shell窗口" HorizontalAlignment="Left" Margin="555,45,0,0" VerticalAlignment="Top" Width="75" Background="#FFDDDDDD" BorderBrush="Transparent" Height="25" Click="launchADB"/>
-            <Button Content="ADB窗口" HorizontalAlignment="Left" Margin="555,15,0,0" VerticalAlignment="Top" Width="75" Background="#FFDDDDDD" BorderBrush="Transparent" Height="25" Click="launchShell"/>
-            <TextBox x:Name="inputBox" HorizontalAlignment="Left" Height="23" Margin="420,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" KeyDown="inputBox_KeyDown" />
+            <Button Content="Shell窗口" HorizontalAlignment="Left" Margin="535,12,0,0" VerticalAlignment="Top" Width="95" Background="#FF512DA8" BorderBrush="Transparent" Height="30" Click="launchADB" Foreground="White">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="ADB窗口" HorizontalAlignment="Left" Margin="535,45,0,0" VerticalAlignment="Top" Width="95" Background="#FF512DA8" BorderBrush="Transparent" Height="30" Click="launchShell" Foreground="White">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <TextBox x:Name="inputBox" HorizontalAlignment="Left" Height="23" Margin="410,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" KeyDown="inputBox_KeyDown" />
             <TextBlock x:Name="inputFieldText" HorizontalAlignment="Left" Margin="240,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Height="23" Width="175" Text="输入需要卸载的包名："/>
         </Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="40,215,0,0" TextWrapping="Wrap" Text="如何使用" VerticalAlignment="Top" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="40,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="680"><Run Text="在上方的四大类功能中选择你需要使用的功能，单击多项选择栏并选择需要使用的功能。"/><LineBreak/><Run Text="如果需要查看输出，请勾选Verbose。"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="40,325,0,0" TextWrapping="Wrap" Text="报障或功能申请" VerticalAlignment="Top" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="40,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="680" Text="Helium的某个功能无法正常工作？还是程序设计有问题？请联系QQ: 203595013, 邮件：kirakbit@gmail.com 或 微信：sudo2u 反馈故障或功能申请。"/>
-        <Button x:Name="aboutMe" Content="" HorizontalAlignment="Left" Margin="40,405,0,0" VerticalAlignment="Top" Width="40" BorderBrush="Transparent" Height="40" Click="aboutMe_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="GitHub-Mark-64px.png"/>
-            </Button.Background>
-        </Button>
-
+        <TextBlock HorizontalAlignment="Left" Margin="165,255,0,0" TextWrapping="Wrap" Text="如何使用" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="165,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="480"><Run Text="在上方的四大类功能中选择你需要使用的功能，单击多项选择栏并选择需要使用的功能。"/><LineBreak/><Run Text="如果需要查看输出，请勾选Verbose。"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="165,365,0,0" TextWrapping="Wrap" Text="报障或功能申请" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="165,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="480" Text="Helium的某个功能无法正常工作？还是程序设计有问题？请联系QQ: 203595013, 邮件：kirakbit@gmail.com 或 微信：sudo2u 反馈故障或功能申请。"/>
+        <Border BorderBrush="#E5E5E5" BorderThickness="1" Margin="0,0,603,0">
+        <Grid HorizontalAlignment="Left" Height="482" VerticalAlignment="Top" Width="160" >
+            <ComboBox HorizontalAlignment="Left" Margin="20,59,0,0" VerticalAlignment="Top" Width="120" BorderBrush="Transparent">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="重启" PreviewMouseDown="reboot"/>
+                <ComboBoxItem Content="重启至REC" PreviewMouseDown="rebootToRec" />
+                <ComboBoxItem Content="重启至BL" PreviewMouseDown="rebootToBL"/>
+                <ComboBoxItem Content="关机" PreviewMouseDown="shutdown"/>
+                <ComboBoxItem Content="检测Fastboot设备" PreviewMouseDown="checkFastbootDevices"/>
+                <ComboBoxItem Content="检测ADB设备" PreviewMouseDown="checkADBDevices"/>
+                <ComboBoxItem Content="设备型号" PreviewMouseDown="getModelNumber"/>
+                <ComboBoxItem Content="系统信息" PreviewMouseDown="getSysInfo"/>
+                <ComboBoxItem Content="安装应用" PreviewMouseDown="installApk"/>
+                <ComboBoxItem Content="卸载应用" PreviewMouseDown="uninstallApk"/>
+                <ComboBoxItem Content="截图" PreviewMouseDown="takeScreenshot"/>
+                <ComboBoxItem Content="录屏" PreviewMouseDown="recordScreen"/>
+                <ComboBoxItem Content="电池信息" PreviewMouseDown="getBatteryInfo"/>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="20,39,0,0" TextWrapping="Wrap" Text="ADB 功能" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="Loops 壁纸" PreviewMouseDown="installLoops"/>
+                <!--
+            <ComboBoxItem Content="启用药丸导航"/>
+            <ComboBoxItem Content="启用环时钟"/>
+            <ComboBoxItem Content="开启白色主题"/>-->
+                <ComboBoxItem/>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="20,120,0,0" TextWrapping="Wrap" Text="Xperia功能" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="20,219,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="切换认证服务器" PreviewMouseDown="launchAuthServerPage"/>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="20,199,0,0" TextWrapping="Wrap" Text="原生功能" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="20,299,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="冰箱"/>
+                <ComboBoxItem Content="小黑屋"/>
+                <ComboBoxItem Content="空调狗"/>
+                <ComboBoxItem Content="Shizuku"/>
+                <ComboBoxItem Content="黑阈"/>
+                <ComboBoxItem/>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="20,279,0,0" TextWrapping="Wrap" Text="服务激活" VerticalAlignment="Top"/>
+            <Button x:Name="aboutMe" Content="" HorizontalAlignment="Left" Margin="60,380,0,0" VerticalAlignment="Top" Width="40" BorderBrush="Transparent" Height="40" Click="aboutMe_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="GitHub-Mark-64px.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        </Border>
     </Grid>
 </Window>
