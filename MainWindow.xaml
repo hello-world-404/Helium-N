@@ -3,87 +3,412 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:loc="clr-namespace:Helium.Properties"
         xmlns:local="clr-namespace:Helium"
         mc:Ignorable="d"
-        Title="Helium" Height="511" Width="769" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="{x:Static loc:Resources.app_title}" Height="687" Width="914.5" WindowStartupLocation="CenterScreen" Icon="ico.png" ResizeMode="CanMinimize">
+    <Window.Resources>
+        <Storyboard x:Key="LoadAnimation">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource LoadAnimation}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="648" Background="#FFE5E5E5" Margin="97,130,0,0">
-            <TextBlock HorizontalAlignment="Left" Margin="40,30,0,0" TextWrapping="Wrap" Text="Helium" VerticalAlignment="Top" FontSize="20"/>
-            <CheckBox x:Name="verbose" Content="Verbose" HorizontalAlignment="Left" Margin="655,34,0,0" VerticalAlignment="Top"/>
-            <!--<CheckBox x:Name="safeMode" Content="安全模式" HorizontalAlignment="Left" Margin="650,48,0,0" VerticalAlignment="Top"/>-->
-            <Button Content="Shell窗口" HorizontalAlignment="Left" Margin="535,12,0,0" VerticalAlignment="Top" Width="95" Background="#FF512DA8" BorderBrush="Transparent" Height="30" Click="launchADB" Foreground="White">
+        <Grid x:Name="grid" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="906" Background="#FFECECEC" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="53,20,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.app_title}" VerticalAlignment="Top" Foreground="#FF353535" FontSize="18"/>
+            <TextBox x:Name="inputField" HorizontalAlignment="Left" Height="23" Margin="619,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" VerticalContentAlignment="Center" Padding="5,0,0,0" Foreground="#FFBDBDBD" BorderBrush="#FFBDBDBD" SelectionBrush="#FF81ADD1">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+        </Grid>
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Height="155" Margin="20,85,0,0" VerticalAlignment="Top" Width="585" Background="White" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.Effect>
+                <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
+            </Grid.Effect>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.adb_function}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="17" Margin="20,12,0,0" VerticalAlignment="Top" Width="11" Source="adb.png"/>
+            <Button x:Name="BatteryInfo" HorizontalAlignment="Left" Margin="24,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="电池信息" Click="adb_dump_battery_data">
                 <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="4"/>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
                     </Style>
                 </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
             </Button>
-            <Button Content="ADB窗口" HorizontalAlignment="Left" Margin="535,45,0,0" VerticalAlignment="Top" Width="95" Background="#FF512DA8" BorderBrush="Transparent" Height="30" Click="launchShell" Foreground="White">
+            <Button x:Name="ProductModel" HorizontalAlignment="Left" Margin="24,94,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="机型信息" Click="adb_dump_model_data">
                 <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="4"/>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
                     </Style>
                 </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
             </Button>
-            <TextBox x:Name="inputBox" HorizontalAlignment="Left" Height="23" Margin="410,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" KeyDown="inputBox_KeyDown" />
-            <TextBlock x:Name="inputFieldText" HorizontalAlignment="Left" Margin="240,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Height="23" Width="175" Text="输入需要卸载的包名："/>
-        </Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="165,255,0,0" TextWrapping="Wrap" Text="如何使用" VerticalAlignment="Top" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="165,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="480"><Run Text="在上方的四大类功能中选择你需要使用的功能，单击多项选择栏并选择需要使用的功能。"/><LineBreak/><Run Text="如果需要查看输出，请勾选Verbose。"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="165,365,0,0" TextWrapping="Wrap" Text="报障或功能申请" VerticalAlignment="Top" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="165,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="480" Text="Helium的某个功能无法正常工作？还是程序设计有问题？请联系QQ: 203595013, 邮件：kirakbit@gmail.com 或 微信：sudo2u 反馈故障或功能申请。"/>
-        <Border BorderBrush="#E5E5E5" BorderThickness="1" Margin="0,0,603,0">
-        <Grid HorizontalAlignment="Left" Height="482" VerticalAlignment="Top" Width="160" >
-            <ComboBox HorizontalAlignment="Left" Margin="20,59,0,0" VerticalAlignment="Top" Width="120" BorderBrush="Transparent">
-                <ComboBox.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                        <GradientStop Color="White" Offset="1"/>
-                    </LinearGradientBrush>
-                </ComboBox.Background>
-                <ComboBoxItem Content="重启" PreviewMouseDown="reboot"/>
-                <ComboBoxItem Content="重启至REC" PreviewMouseDown="rebootToRec" />
-                <ComboBoxItem Content="重启至BL" PreviewMouseDown="rebootToBL"/>
-                <ComboBoxItem Content="关机" PreviewMouseDown="shutdown"/>
-                <ComboBoxItem Content="检测Fastboot设备" PreviewMouseDown="checkFastbootDevices"/>
-                <ComboBoxItem Content="检测ADB设备" PreviewMouseDown="checkADBDevices"/>
-                <ComboBoxItem Content="设备型号" PreviewMouseDown="getModelNumber"/>
-                <ComboBoxItem Content="系统信息" PreviewMouseDown="getSysInfo"/>
-                <ComboBoxItem Content="安装应用" PreviewMouseDown="installApk"/>
-                <ComboBoxItem Content="卸载应用" PreviewMouseDown="uninstallApk"/>
-                <ComboBoxItem Content="截图" PreviewMouseDown="takeScreenshot"/>
-                <ComboBoxItem Content="录屏" PreviewMouseDown="recordScreen"/>
-                <ComboBoxItem Content="电池信息" PreviewMouseDown="getBatteryInfo"/>
-            </ComboBox>
-            <TextBlock HorizontalAlignment="Left" Margin="20,39,0,0" TextWrapping="Wrap" Text="ADB 功能" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="Loops 壁纸" PreviewMouseDown="installLoops"/>
-                <!--
-            <ComboBoxItem Content="启用药丸导航"/>
-            <ComboBoxItem Content="启用环时钟"/>
-            <ComboBoxItem Content="开启白色主题"/>-->
-                <ComboBoxItem/>
-            </ComboBox>
-            <TextBlock HorizontalAlignment="Left" Margin="20,120,0,0" TextWrapping="Wrap" Text="Xperia功能" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="20,219,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="切换认证服务器" PreviewMouseDown="launchAuthServerPage"/>
-            </ComboBox>
-            <TextBlock HorizontalAlignment="Left" Margin="20,199,0,0" TextWrapping="Wrap" Text="原生功能" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="20,299,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="冰箱"/>
-                <ComboBoxItem Content="小黑屋"/>
-                <ComboBoxItem Content="空调狗"/>
-                <ComboBoxItem Content="Shizuku"/>
-                <ComboBoxItem Content="黑阈"/>
-                <ComboBoxItem/>
-            </ComboBox>
-            <TextBlock HorizontalAlignment="Left" Margin="20,279,0,0" TextWrapping="Wrap" Text="服务激活" VerticalAlignment="Top"/>
-            <Button x:Name="aboutMe" Content="" HorizontalAlignment="Left" Margin="60,380,0,0" VerticalAlignment="Top" Width="40" BorderBrush="Transparent" Height="40" Click="aboutMe_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="GitHub-Mark-64px.png"/>
-                </Button.Background>
+            <Button x:Name="PushFile" HorizontalAlignment="Left" Margin="140,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="推送文件" Click="adb_push_file" IsEnabled="False">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="RecordScreen" HorizontalAlignment="Left" Margin="140,94,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="录屏" >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="PullFile" HorizontalAlignment="Left" Margin="255,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="拉取文件" Click="adb_pull_file" IsEnabled="False">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="Screenshot" HorizontalAlignment="Left" Margin="255,94,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="截图" Click="adb_take_screenshot">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="InputText" HorizontalAlignment="Left" Margin="365,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="模拟输入" Click="adb_input_text" IsEnabled="False">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="InstallApp" HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="部署应用" Click="adb_install_app" IsEnabled="False">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
             </Button>
         </Grid>
-        </Border>
+        <Grid x:Name="grid2" HorizontalAlignment="Left" Height="295" Margin="620,85,0,0" VerticalAlignment="Top" Width="262" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
+            </Grid.Effect>
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="29,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.activate_function}" VerticalAlignment="Top" Height="23" Width="91" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Image x:Name="image1" HorizontalAlignment="Left" Height="17" Margin="16,13,0,0" VerticalAlignment="Top" Width="15" Source="verify.png"/>
+            <Button x:Name="button"  Click="act_IceBox" HorizontalAlignment="Left" Margin="22,49,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.ice_box}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="button1" Click="act_airFrozen" HorizontalAlignment="Left" Margin="22,113,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.air_frozen}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="button2" Click="act_BlackRoom" HorizontalAlignment="Left" Margin="22,172,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.black_room}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="button3" Click="act_pmDog" HorizontalAlignment="Left" Margin="22,233,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.permission_dog}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="button4"  HorizontalAlignment="Left" Margin="142,113,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.shizuku}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="button5"  HorizontalAlignment="Left" Margin="142,49,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.brevent}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+        <Grid x:Name="grid3" HorizontalAlignment="Left" Height="190" Margin="20,260,0,0" VerticalAlignment="Top" Width="585" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
+            </Grid.Effect>
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.flash_function}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Image x:Name="image2" HorizontalAlignment="Left" Height="14" Margin="13,14,0,0" VerticalAlignment="Top" Width="17" Source="flash.png"/>
+            <Button x:Name="reboot" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="重启" Click="flash_Reboot">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="reboot_BL" Click="flash_Reboot_BL" HorizontalAlignment="Left" Margin="260,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="重启至BL">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="reboot_Rec" Click="flash_Reboot_REC" HorizontalAlignment="Left" Margin="140,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="重启至REC">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="adb_check_device" Click="flash_Check_ADB_Devices" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="ADB检查设备">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="fastboot_check_device" Click="flash_Check_Fastboot_Devices" HorizontalAlignment="Left" Margin="380,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="Fastboot检查设备" FontSize="10">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="fastboot_check_device_Copy" Click="flash_Recovery_Image" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="刷写REC镜像" IsEnabled="False">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+        <Grid x:Name="grid4" HorizontalAlignment="Left" Height="220" Margin="620,400,0,0" VerticalAlignment="Top" Width="262" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
+            </Grid.Effect>
+            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.stock_function}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Image x:Name="image3" HorizontalAlignment="Left" Height="19" Margin="11,13,0,0" VerticalAlignment="Top" Width="21" Source="android.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.398"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.035"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock HorizontalAlignment="Center" Margin="20,90,24,83" TextWrapping="Wrap" Text="开发小哥哥还在研发中！敬请期待！ヾ(≧▽≦*)o" VerticalAlignment="Center" FontSize="11" Height="47" TextAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="grid5" HorizontalAlignment="Left" Height="145" Margin="20,475,0,0" VerticalAlignment="Top" Width="585" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
+            </Grid.Effect>
+            <TextBlock Text="{x:Static loc:Resources.other_function}" x:Name="textBlock5" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Image x:Name="image4" HorizontalAlignment="Left" Height="13" Margin="15,15,0,0" VerticalAlignment="Top" Width="19" Source="other.png"/>
+            <Button x:Name="adb_window" Click="others_launch_adb" HorizontalAlignment="Left" Margin="20,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="启动ADB窗口">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="shell_window" Click="others_launch_shell" HorizontalAlignment="Left" Margin="170,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="启动 SHELL 窗口" FontSize="11">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="net_adb" Click="others_initiate_net_adb" HorizontalAlignment="Left" Margin="324,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="启动WiFi ADB 调试" FontSize="10">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+        </Grid>
     </Grid>
 </Window>

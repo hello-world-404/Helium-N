@@ -22,7 +22,7 @@ namespace Helium.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Helium.Properties {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Helium.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Helium.Properties {
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,120 @@ namespace Helium.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Hello 的本地化字符串。
+        ///   查找类似 服务激活 的本地化字符串。
         /// </summary>
-        internal static string title {
+        public static string activate_function {
             get {
-                return ResourceManager.GetString("title", resourceCulture);
+                return ResourceManager.GetString("activate_function", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap adb {
+            get {
+                object obj = ResourceManager.GetObject("adb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ADB功能 的本地化字符串。
+        /// </summary>
+        public static string adb_function {
+            get {
+                return ResourceManager.GetString("adb_function", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 空调狗 的本地化字符串。
+        /// </summary>
+        public static string air_frozen {
+            get {
+                return ResourceManager.GetString("air_frozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Helium 的本地化字符串。
+        /// </summary>
+        public static string app_title {
+            get {
+                return ResourceManager.GetString("app_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 小黑屋 的本地化字符串。
+        /// </summary>
+        public static string black_room {
+            get {
+                return ResourceManager.GetString("black_room", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 黑阈 的本地化字符串。
+        /// </summary>
+        public static string brevent {
+            get {
+                return ResourceManager.GetString("brevent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 刷机指令 的本地化字符串。
+        /// </summary>
+        public static string flash_function {
+            get {
+                return ResourceManager.GetString("flash_function", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 冰箱 的本地化字符串。
+        /// </summary>
+        public static string ice_box {
+            get {
+                return ResourceManager.GetString("ice_box", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 其他功能 的本地化字符串。
+        /// </summary>
+        public static string other_function {
+            get {
+                return ResourceManager.GetString("other_function", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 权限狗 的本地化字符串。
+        /// </summary>
+        public static string permission_dog {
+            get {
+                return ResourceManager.GetString("permission_dog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Shizuku 的本地化字符串。
+        /// </summary>
+        public static string shizuku {
+            get {
+                return ResourceManager.GetString("shizuku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 原生指令 的本地化字符串。
+        /// </summary>
+        public static string stock_function {
+            get {
+                return ResourceManager.GetString("stock_function", resourceCulture);
             }
         }
     }

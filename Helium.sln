@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30225.117
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helium", "Helium.csproj", "{BD988746-165C-4EF3-8AB9-11B737B57E12}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Helium-Deploy", "Helium-Deploy\Helium-Deploy\Helium-Deploy.vdproj", "{D0E3A50D-A371-4AAC-B810-ADDFE2FAA4AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helium", "Helium.csproj", "{09DFD381-C23D-4D41-8F18-03A30B21B788}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,17 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Debug|Any CPU.Build.0 = Release|Any CPU
-		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD988746-165C-4EF3-8AB9-11B737B57E12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0E3A50D-A371-4AAC-B810-ADDFE2FAA4AC}.Debug|Any CPU.ActiveCfg = Debug
-		{D0E3A50D-A371-4AAC-B810-ADDFE2FAA4AC}.Release|Any CPU.ActiveCfg = Release
+		{09DFD381-C23D-4D41-8F18-03A30B21B788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09DFD381-C23D-4D41-8F18-03A30B21B788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09DFD381-C23D-4D41-8F18-03A30B21B788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09DFD381-C23D-4D41-8F18-03A30B21B788}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A0BA7FE4-D602-43FE-80F4-306EB78E0012}
+		SolutionGuid = {099F4692-825A-4CAC-B1DB-20681F9FE4CC}
 	EndGlobalSection
 EndGlobal

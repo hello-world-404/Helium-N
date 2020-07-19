@@ -1,0 +1,17 @@
+C:\Users\carl\source\repos\Helium\obj\Debug\App.g.cs
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium_MarkupCompile.cache
+C:\Users\carl\source\repos\Helium\bin\Debug\Helium.exe.config
+C:\Users\carl\source\repos\Helium\bin\Debug\Helium.exe
+C:\Users\carl\source\repos\Helium\bin\Debug\Helium.pdb
+C:\Users\carl\source\repos\Helium\bin\Debug\en\Helium.resources.dll
+C:\Users\carl\source\repos\Helium\obj\Debug\MainWindow.g.cs
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium_MarkupCompile.lref
+C:\Users\carl\source\repos\Helium\obj\Debug\MainWindow.baml
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium.g.resources
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium.Properties.Resources.resources
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium.Properties.Resources.en.resources
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium.csproj.GenerateResource.cache
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium.csproj.CoreCompileInputs.cache
+C:\Users\carl\source\repos\Helium\obj\Debug\en\Helium.resources.dll
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium.exe
+C:\Users\carl\source\repos\Helium\obj\Debug\Helium.pdb
