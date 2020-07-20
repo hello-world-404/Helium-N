@@ -10,3 +10,6 @@ Helium 是专门为Windows 10，Windows 8.1 设计的ADB刷机工具箱。
 ## 开发
 Visual Studio 2019 和 C#.
 
+
+#### 我也要小星星！
+
