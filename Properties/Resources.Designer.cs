@@ -61,6 +61,16 @@ namespace Helium.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap about {
+            get {
+                object obj = ResourceManager.GetObject("about", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 服务激活 的本地化字符串。
         /// </summary>
         public static string activate_function {
@@ -125,6 +135,26 @@ namespace Helium.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap dev {
+            get {
+                object obj = ResourceManager.GetObject("dev", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap flash {
+            get {
+                object obj = ResourceManager.GetObject("flash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 刷机指令 的本地化字符串。
         /// </summary>
         public static string flash_function {
@@ -139,6 +169,35 @@ namespace Helium.Properties {
         public static string ice_box {
             get {
                 return ResourceManager.GetString("ice_box", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap ico {
+            get {
+                object obj = ResourceManager.GetObject("ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap info {
+            get {
+                object obj = ResourceManager.GetObject("info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 输入文件位置 的本地化字符串。
+        /// </summary>
+        public static string inputboxform_header_text {
+            get {
+                return ResourceManager.GetString("inputboxform_header_text", resourceCulture);
             }
         }
         
@@ -175,6 +234,16 @@ namespace Helium.Properties {
         public static string stock_function {
             get {
                 return ResourceManager.GetString("stock_function", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap verify {
+            get {
+                object obj = ResourceManager.GetObject("verify", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
