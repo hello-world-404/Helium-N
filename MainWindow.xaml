@@ -126,6 +126,17 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
+            <Image x:Name="warnIcon" HorizontalAlignment="Left" Height="20" Margin="572,20,0,0" VerticalAlignment="Top" Width="20" Source="info.png" RenderTransformOrigin="0.5,0.5" MouseEnter="warnIcon_MouseEnter">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.149"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.039"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBlock x:Name="warningMessage" HorizontalAlignment="Left" Margin="310,25,0,15" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="10" Height="20"/>
         </Grid>
         <Grid x:Name="grid1" HorizontalAlignment="Left" Height="155" Margin="20,85,0,0" VerticalAlignment="Top" Width="585" Background="White" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
@@ -161,7 +172,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="PushFile" HorizontalAlignment="Left" Margin="140,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="推送文件" Click="adb_push_file" IsEnabled="False">
+            <Button x:Name="PushFile" HorizontalAlignment="Left" Margin="140,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="推送文件" Click="adb_push_file">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -201,7 +212,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="InputText" HorizontalAlignment="Left" Margin="365,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="模拟输入" Click="adb_input_text" IsEnabled="False">
+            <Button x:Name="InputText" HorizontalAlignment="Left" Margin="365,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="模拟输入" Click="adb_input_text">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -211,7 +222,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="InstallApp" HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="部署应用" Click="adb_install_app" IsEnabled="False">
+            <Button x:Name="InstallApp" HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="部署应用" Click="adb_install_app">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -294,7 +305,7 @@
                 <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
             </Grid.Effect>
             <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.flash_function}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <Image x:Name="image2" HorizontalAlignment="Left" Height="14" Margin="13,14,0,0" VerticalAlignment="Top" Width="17" Source="flash.png"/>
+            <Image x:Name="image2" HorizontalAlignment="Left" Height="14" Margin="13,14,0,0" VerticalAlignment="Top" Width="17" Source="flash.png" OpacityMask="Black"/>
             <Button x:Name="reboot" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="重启" Click="flash_Reboot">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -345,7 +356,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="fastboot_check_device_Copy" Click="flash_Recovery_Image" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="刷写REC镜像" IsEnabled="False">
+            <Button x:Name="fastboot_check_device_Copy" Click="flash_Recovery_Image" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="刷写REC镜像" Background="#FFFFFF7F">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
