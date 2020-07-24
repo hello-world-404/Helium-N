@@ -164,6 +164,16 @@
                 </Button.Effect>
             </Button>
             <Image HorizontalAlignment="Left" Height="20" Margin="18,10,0,0" VerticalAlignment="Top" Width="14" Source="Resources/adb.png"/>
+            <Button x:Name="InstallApk" HorizontalAlignment="Left" Margin="24,95,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="安装应用" Click="adb_install">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
         </Grid>
         <Grid x:Name="grid2" HorizontalAlignment="Left" Height="300" Margin="620,85,0,0" VerticalAlignment="Top" Width="262" Background="White">
             <Grid.Effect>

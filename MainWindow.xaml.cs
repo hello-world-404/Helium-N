@@ -4,10 +4,6 @@ using System.Windows;
 
 namespace Helium
 {
-    /// <summary>
-    /// Main page interaction
-    /// </summary>
-    ///
 
     public partial class MainWindow : Window
     {
@@ -40,21 +36,19 @@ namespace Helium
             Func.runCmd("adb shell screencap -p /sdcard/screenshot.png && adb pull /sdcard/screenshot.png");
         }
 
-        public void adb_install_app(object sender, RoutedEventArgs e)
+        public void adb_install(object sender, RoutedEventArgs e)
         {
             string apkDir;
-            OpenFileDialog of = new OpenFileDialog();
-            of.Filter = ".APK 文件 (*.apk)|*.apk";
-            of.DefaultExt = ".apk";
+            OpenFileDialog vf = new OpenFileDialog();
+            vf.Filter = ".APK 文件 (*.apk) | *.apk";
+            vf.DefaultExt = ".apk";
 
-            if ((bool)of.ShowDialog())
+            if ((bool)vf.ShowDialog())
             {
-                apkDir = of.FileName;
-                Func.runCmd("adb install " + apkDir);
-
+                apkDir = vf.FileName;
+                Func.runCmd("adb install" + apkDir);
             }
         }
-
 
         //其他指令Grid命令
         public void others_launch_adb(object sender, RoutedEventArgs e)
