@@ -12,3 +12,4 @@ C:\Users\carl\source\repos\Helium\obj\Release\Helium.csproj.GenerateResource.cac
 C:\Users\carl\source\repos\Helium\obj\Release\Helium.csproj.CoreCompileInputs.cache
 C:\Users\carl\source\repos\Helium\obj\Release\Helium.exe
 C:\Users\carl\source\repos\Helium\obj\Release\Helium.pdb
+C:\Users\carl\source\repos\Helium\obj\Release\Helium.csprojAssemblyReference.cache
