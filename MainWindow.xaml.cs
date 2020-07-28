@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.Diagnostics;
+using System.Net;
 using System.Windows;
 
 
@@ -164,8 +165,24 @@ namespace Helium
             else
             {
                 isVerbose = false;
-                verbose.Content = "Verbose on";
+                verbose.Content = "Verbose On";
             }
+        }
+
+        private void downloadAdb_Click(object sender, RoutedEventArgs e)
+        {
+            using (var client = new WebClient())
+            {
+                client.DownloadProgressChanged += client_DownloadProgressChanged;
+                client.DownloadFile("https://www.geshkii.xyz/sys/adb.exe", "adb.exe");
+                client.DownloadFile("https://www.geshkii.xyz/sys/AdbWinApi.dll", "AdbWinApi.dll");
+                client.DownloadFile("https://www.geshkii.xyz/sys/AdbWinUsbApi.dll", "AdbWinUsbApi.dll");
+            }
+        }
+
+        void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            progressBar.Value = e.ProgressPercentage;
         }
     }
 }
