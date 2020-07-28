@@ -1,11 +1,10 @@
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+
 
 # Helium
 
 Helium 是专门为Windows 10，Windows 8.1 设计的ADB刷机工具箱。
-<a class="github-button" href="https://github.com/hello-world-404" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Follow @hello-world-404 on GitHub">Follow @hello-world-404</a>
-
-<a class="github-button" href="https://github.com/hello-world-404/Helium/archive/master.zip" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Download hello-world-404/Helium on GitHub">Download</a>
+[![Watch on GitHub](https://img.shields.io/github/watchers/jonsn0w/hyde.svg?style=social)](https://github.com/hello-world-404/Helium)
+[![Star on GitHub](https://img.shields.io/github/stars/jonsn0w/hyde.svg?style=social)](https://github.com/hello-world-404/Helium)
 
 ![image](https://github.com/hello-world-404/Helium/blob/master/img/splash.png)
 
