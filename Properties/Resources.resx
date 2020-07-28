@@ -121,20 +121,29 @@
   <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="activate_function" xml:space="preserve">
-    <value>服务激活</value>
+  <data name="about_text_line1" xml:space="preserve">
+    <value>Helium, 一个ADB工具箱。</value>
+  </data>
+  <data name="about_text_line2" xml:space="preserve">
+    <value>专为Windows 10 和 Windows 8.1 设计</value>
+  </data>
+  <data name="about_title" xml:space="preserve">
+    <value>关于</value>
   </data>
   <data name="adb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adb_function" xml:space="preserve">
+  <data name="adb_functions" xml:space="preserve">
     <value>ADB功能</value>
   </data>
-  <data name="air_frozen" xml:space="preserve">
+  <data name="airfrozen" xml:space="preserve">
     <value>空调狗</value>
   </data>
   <data name="app_title" xml:space="preserve">
     <value>Helium</value>
+  </data>
+  <data name="battery_info" xml:space="preserve">
+    <value>电池信息</value>
   </data>
   <data name="black_room" xml:space="preserve">
     <value>小黑屋</value>
@@ -142,16 +151,34 @@
   <data name="brevent" xml:space="preserve">
     <value>黑阈</value>
   </data>
+  <data name="check_adb" xml:space="preserve">
+    <value>ADB检查设备</value>
+  </data>
+  <data name="check_fastboot" xml:space="preserve">
+    <value>Fastboot检查设备</value>
+  </data>
+  <data name="copyright_info" xml:space="preserve">
+    <value>© sudo2u | MIT 许可</value>
+  </data>
   <data name="dev" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="flash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flash_function" xml:space="preserve">
+  <data name="flash_functions" xml:space="preserve">
     <value>刷机指令</value>
   </data>
-  <data name="ice_box" xml:space="preserve">
+  <data name="flash_recovery" xml:space="preserve">
+    <value>刷写REC镜像</value>
+  </data>
+  <data name="github_release" xml:space="preserve">
+    <value>Github Release</value>
+  </data>
+  <data name="github_repo" xml:space="preserve">
+    <value>Github Repo</value>
+  </data>
+  <data name="icebox" xml:space="preserve">
     <value>冰箱</value>
   </data>
   <data name="ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -160,20 +187,44 @@
   <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="inputboxform_header_text" xml:space="preserve">
-    <value>输入文件位置</value>
+  <data name="install_app" xml:space="preserve">
+    <value>部署应用</value>
   </data>
-  <data name="other_function" xml:space="preserve">
+  <data name="launch_adb_window" xml:space="preserve">
+    <value>启动ADB窗口</value>
+  </data>
+  <data name="launch_shell_window" xml:space="preserve">
+    <value>启动SHELL窗口</value>
+  </data>
+  <data name="model_info" xml:space="preserve">
+    <value>机型信息</value>
+  </data>
+  <data name="other_functions" xml:space="preserve">
     <value>其他功能</value>
   </data>
   <data name="permission_dog" xml:space="preserve">
     <value>权限狗</value>
   </data>
+  <data name="reboot_bootloader" xml:space="preserve">
+    <value>重启至BL</value>
+  </data>
+  <data name="reboot_recovery" xml:space="preserve">
+    <value>重启至REC</value>
+  </data>
+  <data name="reboot_system" xml:space="preserve">
+    <value>重启</value>
+  </data>
+  <data name="record_screen" xml:space="preserve">
+    <value>录屏</value>
+  </data>
+  <data name="service_functions" xml:space="preserve">
+    <value>服务激活</value>
+  </data>
   <data name="shizuku" xml:space="preserve">
     <value>Shizuku</value>
   </data>
-  <data name="stock_function" xml:space="preserve">
-    <value>原生指令</value>
+  <data name="take_screenshot" xml:space="preserve">
+    <value>截图</value>
   </data>
   <data name="verify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

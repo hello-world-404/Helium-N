@@ -99,6 +99,16 @@
                 </TransformGroup>
             </Grid.RenderTransform>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="53,20,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.app_title}" VerticalAlignment="Top" Foreground="#FF353535" FontSize="18"/>
+            <Button x:Name="verbose" HorizontalAlignment="Left" Margin="795,16,0,0" VerticalAlignment="Top" Width="80" BorderBrush="Transparent" Height="34" Content="Verbose" Click="verbose_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
         </Grid>
         <Grid x:Name="grid1" HorizontalAlignment="Left" Height="155" Margin="20,85,0,0" VerticalAlignment="Top" Width="585" Background="White" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
@@ -112,8 +122,8 @@
             <Grid.Effect>
                 <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
             </Grid.Effect>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.adb_function}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <Button x:Name="BatteryInfo" HorizontalAlignment="Left" Margin="24,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="电池信息" Click="adb_dump_battery_data">
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="37,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.adb_functions}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Button x:Name="BatteryInfo" HorizontalAlignment="Left" Margin="24,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.battery_info}" Click="adb_dump_battery_data">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -123,7 +133,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="ProductModel" HorizontalAlignment="Left" Margin="363,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="机型信息" Click="adb_dump_model_data">
+            <Button x:Name="ProductModel" HorizontalAlignment="Left" Margin="363,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.model_info}" Click="adb_dump_model_data">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -133,7 +143,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="RecordScreen" HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="录屏" >
+            <Button x:Name="RecordScreen" HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.record_screen}" >
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -143,7 +153,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="Screenshot" HorizontalAlignment="Left" Margin="140,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="截图" Click="adb_take_screenshot">
+            <Button x:Name="Screenshot" HorizontalAlignment="Left" Margin="140,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.take_screenshot}" Click="adb_take_screenshot">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -153,7 +163,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="InstallApp" HorizontalAlignment="Left" Margin="255,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="部署应用" Click="adb_install">
+            <Button x:Name="InstallApp" HorizontalAlignment="Left" Margin="255,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.install_app}" Click="adb_install">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -169,8 +179,8 @@
             <Grid.Effect>
                 <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
             </Grid.Effect>
-            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="29,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.activate_function}" VerticalAlignment="Top" Height="23" Width="91" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <Button x:Name="button"  Click="act_IceBox" HorizontalAlignment="Left" Margin="22,49,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.ice_box}">
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="29,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.service_functions}" VerticalAlignment="Top" Height="23" Width="91" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Button x:Name="button"  Click="act_IceBox" HorizontalAlignment="Left" Margin="22,49,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.icebox}">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -180,7 +190,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="button1" Click="act_airFrozen" HorizontalAlignment="Left" Margin="22,113,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.air_frozen}">
+            <Button x:Name="button1" Click="act_airFrozen" HorizontalAlignment="Left" Margin="22,113,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.airfrozen}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -236,8 +246,8 @@
             <Grid.Effect>
                 <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
             </Grid.Effect>
-            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.flash_function}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <Button x:Name="reboot" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="重启" Click="flash_Reboot">
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="38,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.flash_functions}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Button x:Name="reboot" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_system}" Click="flash_Reboot">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -247,7 +257,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="reboot_BL" Click="flash_Reboot_BL" HorizontalAlignment="Left" Margin="260,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="重启至BL">
+            <Button x:Name="reboot_BL" Click="flash_Reboot_BL" HorizontalAlignment="Left" Margin="260,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_bootloader}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -257,7 +267,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="reboot_Rec" Click="flash_Reboot_REC" HorizontalAlignment="Left" Margin="140,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="重启至REC">
+            <Button x:Name="reboot_Rec" Click="flash_Reboot_REC" HorizontalAlignment="Left" Margin="140,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_recovery}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -267,7 +277,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="adb_check_device" Click="flash_Check_ADB_Devices" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="ADB检查设备">
+            <Button x:Name="adb_check_device" Click="flash_Check_ADB_Devices" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.check_adb}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -277,7 +287,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="fastboot_check_device" Click="flash_Check_Fastboot_Devices" HorizontalAlignment="Left" Margin="380,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="Fastboot检查设备" FontSize="10">
+            <Button x:Name="fastboot_check_device" Click="flash_Check_Fastboot_Devices" HorizontalAlignment="Left" Margin="380,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.check_fastboot}" FontSize="10">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -287,7 +297,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="fastboot_check_device_Copy" Click="flash_Recovery_Image" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="刷写REC镜像" Background="#FFFFFF7F">
+            <Button x:Name="flash_recovery_image" Click="flash_Recovery_Image" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.flash_recovery}" Background="#FFFFFF7F">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -303,13 +313,13 @@
             <Grid.Effect>
                 <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
             </Grid.Effect>
-            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="关于" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <TextBlock HorizontalAlignment="Center" Margin="30,133,34,40" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" Height="47" TextAlignment="Center"><Run Text="Helium, 一个ADB工具箱。"/><LineBreak/><Run Text="专为Windows 10 和 Windows 8.1 设计"/><InlineUIContainer>
-                    <TextBlock TextWrapping="Wrap" Width="130" FontSize="9"><Run Text="©"/><Run Text=" sudo2"/><Run Text="u"/><Run Text=" | MIT 许可"/></TextBlock>
+            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.about_title}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Center" Margin="34,133,30,40" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" Height="47" TextAlignment="Center"><Run Text="{x:Static loc:Resources.about_text_line1}"/><LineBreak/><Run Text="专为Windows 10 和 Windows 8.1 设计"/><InlineUIContainer>
+                    <TextBlock TextWrapping="Wrap" Width="130" FontSize="9" Text="{x:Static loc:Resources.copyright_info}"/>
                 </InlineUIContainer></TextBlock>
             <Image HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="20" Source="Resources/info.png"/>
             <Image HorizontalAlignment="Left" Height="100" Margin="80,25,0,0" VerticalAlignment="Top" Width="100" Source="Resources/ico.png"/>
-            <Button x:Name="openRepo" Click="openRepo_Click" HorizontalAlignment="Left" Margin="30,180,0,0" VerticalAlignment="Top" Width="60" BorderBrush="Transparent" Height="25" Content="Github Repo" FontSize="8">
+            <Button x:Name="openRepo" Click="openRepo_Click" HorizontalAlignment="Left" Margin="30,180,0,0" VerticalAlignment="Top" Width="60" BorderBrush="Transparent" Height="25" Content="{x:Static loc:Resources.github_repo}" FontSize="8">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -319,7 +329,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="openRelease" Click="openRelease_Click" HorizontalAlignment="Left" Margin="166,180,0,0" VerticalAlignment="Top" Width="60" BorderBrush="Transparent" Height="25" Content="Github Release" FontSize="7">
+            <Button x:Name="openRelease" Click="openRelease_Click" HorizontalAlignment="Left" Margin="166,180,0,0" VerticalAlignment="Top" Width="60" BorderBrush="Transparent" Height="25" Content="{x:Static loc:Resources.github_release}" FontSize="7">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -334,8 +344,8 @@
             <Grid.Effect>
                 <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
             </Grid.Effect>
-            <TextBlock Text="{x:Static loc:Resources.other_function}" x:Name="textBlock5" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <Button x:Name="adb_window" Click="others_launch_adb" HorizontalAlignment="Left" Margin="20,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="启动ADB窗口">
+            <TextBlock Text="{x:Static loc:Resources.other_functions}" x:Name="textBlock5" HorizontalAlignment="Left" Margin="38,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            <Button x:Name="adb_window" Click="others_launch_adb" HorizontalAlignment="Left" Margin="20,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.launch_adb_window}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -345,7 +355,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="shell_window" Click="others_launch_shell" HorizontalAlignment="Left" Margin="135,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="启动 SHELL 窗口" FontSize="11">
+            <Button x:Name="shell_window" Click="others_launch_shell" HorizontalAlignment="Left" Margin="135,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.launch_shell_window}" FontSize="11">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>

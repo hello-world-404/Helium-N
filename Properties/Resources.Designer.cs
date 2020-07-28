@@ -71,11 +71,29 @@ namespace Helium.Properties {
         }
         
         /// <summary>
-        ///   查找类似 服务激活 的本地化字符串。
+        ///   查找类似 Helium, 一个ADB工具箱。 的本地化字符串。
         /// </summary>
-        public static string activate_function {
+        public static string about_text_line1 {
             get {
-                return ResourceManager.GetString("activate_function", resourceCulture);
+                return ResourceManager.GetString("about_text_line1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 专为Windows 10 和 Windows 8.1 设计 的本地化字符串。
+        /// </summary>
+        public static string about_text_line2 {
+            get {
+                return ResourceManager.GetString("about_text_line2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 关于 的本地化字符串。
+        /// </summary>
+        public static string about_title {
+            get {
+                return ResourceManager.GetString("about_title", resourceCulture);
             }
         }
         
@@ -92,18 +110,18 @@ namespace Helium.Properties {
         /// <summary>
         ///   查找类似 ADB功能 的本地化字符串。
         /// </summary>
-        public static string adb_function {
+        public static string adb_functions {
             get {
-                return ResourceManager.GetString("adb_function", resourceCulture);
+                return ResourceManager.GetString("adb_functions", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 空调狗 的本地化字符串。
         /// </summary>
-        public static string air_frozen {
+        public static string airfrozen {
             get {
-                return ResourceManager.GetString("air_frozen", resourceCulture);
+                return ResourceManager.GetString("airfrozen", resourceCulture);
             }
         }
         
@@ -113,6 +131,15 @@ namespace Helium.Properties {
         public static string app_title {
             get {
                 return ResourceManager.GetString("app_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 电池信息 的本地化字符串。
+        /// </summary>
+        public static string battery_info {
+            get {
+                return ResourceManager.GetString("battery_info", resourceCulture);
             }
         }
         
@@ -131,6 +158,33 @@ namespace Helium.Properties {
         public static string brevent {
             get {
                 return ResourceManager.GetString("brevent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ADB检查设备 的本地化字符串。
+        /// </summary>
+        public static string check_adb {
+            get {
+                return ResourceManager.GetString("check_adb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Fastboot检查设备 的本地化字符串。
+        /// </summary>
+        public static string check_fastboot {
+            get {
+                return ResourceManager.GetString("check_fastboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 © sudo2u | MIT 许可 的本地化字符串。
+        /// </summary>
+        public static string copyright_info {
+            get {
+                return ResourceManager.GetString("copyright_info", resourceCulture);
             }
         }
         
@@ -157,18 +211,45 @@ namespace Helium.Properties {
         /// <summary>
         ///   查找类似 刷机指令 的本地化字符串。
         /// </summary>
-        public static string flash_function {
+        public static string flash_functions {
             get {
-                return ResourceManager.GetString("flash_function", resourceCulture);
+                return ResourceManager.GetString("flash_functions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 刷写REC镜像 的本地化字符串。
+        /// </summary>
+        public static string flash_recovery {
+            get {
+                return ResourceManager.GetString("flash_recovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Github Release 的本地化字符串。
+        /// </summary>
+        public static string github_release {
+            get {
+                return ResourceManager.GetString("github_release", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Github Repo 的本地化字符串。
+        /// </summary>
+        public static string github_repo {
+            get {
+                return ResourceManager.GetString("github_repo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 冰箱 的本地化字符串。
         /// </summary>
-        public static string ice_box {
+        public static string icebox {
             get {
-                return ResourceManager.GetString("ice_box", resourceCulture);
+                return ResourceManager.GetString("icebox", resourceCulture);
             }
         }
         
@@ -193,20 +274,47 @@ namespace Helium.Properties {
         }
         
         /// <summary>
-        ///   查找类似 输入文件位置 的本地化字符串。
+        ///   查找类似 部署应用 的本地化字符串。
         /// </summary>
-        public static string inputboxform_header_text {
+        public static string install_app {
             get {
-                return ResourceManager.GetString("inputboxform_header_text", resourceCulture);
+                return ResourceManager.GetString("install_app", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 启动ADB窗口 的本地化字符串。
+        /// </summary>
+        public static string launch_adb_window {
+            get {
+                return ResourceManager.GetString("launch_adb_window", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 启动SHELL窗口 的本地化字符串。
+        /// </summary>
+        public static string launch_shell_window {
+            get {
+                return ResourceManager.GetString("launch_shell_window", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 机型信息 的本地化字符串。
+        /// </summary>
+        public static string model_info {
+            get {
+                return ResourceManager.GetString("model_info", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 其他功能 的本地化字符串。
         /// </summary>
-        public static string other_function {
+        public static string other_functions {
             get {
-                return ResourceManager.GetString("other_function", resourceCulture);
+                return ResourceManager.GetString("other_functions", resourceCulture);
             }
         }
         
@@ -220,6 +328,51 @@ namespace Helium.Properties {
         }
         
         /// <summary>
+        ///   查找类似 重启至BL 的本地化字符串。
+        /// </summary>
+        public static string reboot_bootloader {
+            get {
+                return ResourceManager.GetString("reboot_bootloader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 重启至REC 的本地化字符串。
+        /// </summary>
+        public static string reboot_recovery {
+            get {
+                return ResourceManager.GetString("reboot_recovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 重启 的本地化字符串。
+        /// </summary>
+        public static string reboot_system {
+            get {
+                return ResourceManager.GetString("reboot_system", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 录屏 的本地化字符串。
+        /// </summary>
+        public static string record_screen {
+            get {
+                return ResourceManager.GetString("record_screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 服务激活 的本地化字符串。
+        /// </summary>
+        public static string service_functions {
+            get {
+                return ResourceManager.GetString("service_functions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Shizuku 的本地化字符串。
         /// </summary>
         public static string shizuku {
@@ -229,11 +382,11 @@ namespace Helium.Properties {
         }
         
         /// <summary>
-        ///   查找类似 原生指令 的本地化字符串。
+        ///   查找类似 截图 的本地化字符串。
         /// </summary>
-        public static string stock_function {
+        public static string take_screenshot {
             get {
-                return ResourceManager.GetString("stock_function", resourceCulture);
+                return ResourceManager.GetString("take_screenshot", resourceCulture);
             }
         }
         
