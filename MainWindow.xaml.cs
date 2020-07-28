@@ -20,14 +20,14 @@ namespace Helium
         //ADB指令Grid命令
         public void adb_dump_battery_data(object sender, RoutedEventArgs e)
         {
-            
+
             runCmd("adb shell dumpsys battery");
         }
 
 
         public void adb_dump_model_data(object sender, RoutedEventArgs e)
         {
-            
+
             runCmd("adb shell getprop ro.product.model");
         }
 
@@ -100,7 +100,7 @@ namespace Helium
             {
                 imgDir = of.FileName;
                 runCmd("adb devices && adb reboot bootloader && fastboot devices && fastboot flash recovery " + imgDir + " fastboot reboot-bootloader + fastboot erase cache && fastboot reboot");
-                
+
             }
         }
 
@@ -171,7 +171,7 @@ namespace Helium
 
         private void downloadAdb_Click(object sender, RoutedEventArgs e)
         {
-            using (var client = new WebClient())
+            using (WebClient client = new WebClient())
             {
                 client.DownloadProgressChanged += client_DownloadProgressChanged;
                 client.DownloadFile("https://www.geshkii.xyz/sys/adb.exe", "adb.exe");
