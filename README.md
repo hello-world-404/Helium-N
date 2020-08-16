@@ -19,8 +19,19 @@ Visual Studio 2019 和 C#.
 简体中文
 英语 -- 90%
 
-如果你想进行多语言翻译，步骤详见Pull requests
+如果你想进行多语言翻译，步骤详见"协作“
 
 
-#### 我也要小星星！
+## 协作
+1. Fork 本项目 [教程](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
+2. 在你的Fork中做更改 [教程](https://www.jianshu.com/p/2e1d551b8261)
+3. Commmit和Push到你的Fork中 (教程参照上方）
+4. 在这里提交pull request [教程](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+5. 查看之后会通过
+6. 你的名字会显示在 ”协作者“ 中
+
+
+#### 如果好用，就给个星呗 》——》
+
+
 
