@@ -1,7 +1,7 @@
 
 
 # Helium
-![](https://img.shields.io/badge/blog-@hello-world-404-blue.svg)](https://geshkii.xyz)
+[![](https://img.shields.io/badge/blog-@hello-world-404-blue.svg)](https://geshkii.xyz)
 
 Helium 是专门为Windows 10，Windows 8.1 设计的ADB刷机工具箱。
 ![image](https://github.com/hello-world-404/Helium/blob/master/img/splash.png)
