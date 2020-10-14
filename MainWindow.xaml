@@ -99,27 +99,8 @@
                 </TransformGroup>
             </Grid.RenderTransform>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="53,20,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.app_title}" VerticalAlignment="Top" Foreground="#FF353535" FontSize="18"/>
-            <Button x:Name="verbose" HorizontalAlignment="Left" Margin="795,16,0,0" VerticalAlignment="Top" Width="80" BorderBrush="Transparent" Height="34" Content="Verbose" Click="verbose_Click">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="downloadAdb" HorizontalAlignment="Left" Margin="700,16,0,0" VerticalAlignment="Top" Width="80" BorderBrush="Transparent" Height="34" Content="下载ADB" Click="downloadAdb_Click">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="15" Margin="560,28,0,0" VerticalAlignment="Top" Width="120"/>
+            <CheckBox x:Name="verbose" Content="{x:Static loc:Resources.verbose_mode}" HorizontalAlignment="Left" Margin="805,27,0,0" VerticalAlignment="Top" Checked="verbose_Checked" Unchecked="verbose_Unchecked"/>
+            <CheckBox x:Name="checkDevice" Content="{x:Static loc:Resources.check_device}" HorizontalAlignment="Left" Margin="710,27,0,0" VerticalAlignment="Top" Checked="checkDevice_Checked" Unchecked="checkDevice_Unchecked"/>
         </Grid>
         <Grid x:Name="grid1" HorizontalAlignment="Left" Height="155" Margin="20,85,0,0" VerticalAlignment="Top" Width="585" Background="White" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
@@ -185,6 +166,26 @@
                 </Button.Effect>
             </Button>
             <Image HorizontalAlignment="Left" Height="20" Margin="18,10,0,0" VerticalAlignment="Top" Width="14" Source="Resources/adb.png"/>
+            <Button x:Name="PullInfo" HorizontalAlignment="Left" Margin="24,95,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.pull_file}" Click="adb_dump_battery_data">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="PushInfo" HorizontalAlignment="Left" Margin="140,95,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.push_file}" Click="adb_dump_battery_data">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
         </Grid>
         <Grid x:Name="grid2" HorizontalAlignment="Left" Height="300" Margin="620,85,0,0" VerticalAlignment="Top" Width="262" Background="White">
             <Grid.Effect>

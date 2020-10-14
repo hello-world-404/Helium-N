@@ -1,7 +1,8 @@
 ﻿using Microsoft.Win32;
 using System.Diagnostics;
-using System.Net;
 using System.Windows;
+using System.Windows.Input;
+using static Helium.Global;
 
 
 namespace Helium
@@ -10,81 +11,84 @@ namespace Helium
     public partial class MainWindow : Window
     {
         private static bool isVerbose;
+        private static bool needsCheckDevice;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            checkAdbDevice();
         }
 
+
+        ///All event handlers for click events
 
         //ADB指令Grid命令
         public void adb_dump_battery_data(object sender, RoutedEventArgs e)
         {
-
-            runCmd("adb shell dumpsys battery");
+            runCommand(dumpBattery);
         }
 
 
         public void adb_dump_model_data(object sender, RoutedEventArgs e)
         {
-
-            runCmd("adb shell getprop ro.product.model");
+            runCommand(getModel);
         }
 
         public void adb_take_screenshot(object sender, RoutedEventArgs e)
         {
-            runCmd("adb shell screencap -p /sdcard/screenshot.png && adb pull /sdcard/screenshot.png");
+            runCommand(takeScreenshot);
         }
 
         public void adb_install(object sender, RoutedEventArgs e)
         {
-            string apkDir;
-            OpenFileDialog vf = new OpenFileDialog();
-            vf.Filter = ".APK 文件 (*.apk) | *.apk";
-            vf.DefaultExt = ".apk";
+            string apkDir = null;
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = ".apk 文件 (*.apk) | *.apk";
+            dialog.DefaultExt = ".apk";
 
-            if ((bool)vf.ShowDialog())
+            if ((bool)dialog.ShowDialog())
             {
-                apkDir = vf.FileName;
-                runCmd("adb install" + apkDir);
+                apkDir = dialog.FileName;
+                runCommand(installPrefix + apkDir);
             }
         }
 
         //其他指令Grid命令
         public void others_launch_adb(object sender, RoutedEventArgs e)
         {
-            runCmd("");
+            runCommand(launchAdb);
         }
 
         public void others_launch_shell(object sender, RoutedEventArgs e)
         {
-            runCmd("adb shell");
+            runCommand(launchShell);
         }
 
         //刷机指令Grid命令
         public void flash_Reboot(object sender, RoutedEventArgs e)
         {
-            runCmd("adb reboot");
+            runCommand(Global.reboot);
         }
 
         public void flash_Reboot_REC(object sender, RoutedEventArgs e)
         {
-            runCmd("adb reboot recovery");
+            runCommand(rebootRec);
         }
 
         public void flash_Check_Fastboot_Devices(object sender, RoutedEventArgs e)
         {
-            runCmd("fastboot devices");
+            runCommand(fastbootCheckDevices);
         }
 
         public void flash_Reboot_BL(object sender, RoutedEventArgs e)
         {
-            runCmd("adb reboot bootloader");
+            runCommand(rebootBootloader);
         }
 
         public void flash_Check_ADB_Devices(object sender, RoutedEventArgs e)
         {
-            runCmd("adb devices");
+            runCommand(getDevices);
         }
 
         //需要测试刷Rec功能
@@ -99,7 +103,7 @@ namespace Helium
             if ((bool)of.ShowDialog())
             {
                 imgDir = of.FileName;
-                runCmd("adb devices && adb reboot bootloader && fastboot devices && fastboot flash recovery " + imgDir + " fastboot reboot-bootloader + fastboot erase cache && fastboot reboot");
+                runCommand("adb devices && adb reboot bootloader && fastboot devices && fastboot flash recovery " + imgDir + " fastboot reboot-bootloader + fastboot erase cache && fastboot reboot");
 
             }
         }
@@ -108,81 +112,103 @@ namespace Helium
         //服务激活Grid命令
         public void act_IceBox(object sender, RoutedEventArgs e)
         {
-            runCmd("adb shell dpm set-device-owner com.catchingnow.icebox/.receiver.DPMReceiver");
+            runCommand(iceBox);
         }
 
         public void act_Brevent(object sender, RoutedEventArgs e)
         {
-            runCmd("adb -d shell sh /data/data/me.piebridge.brevent/brevent.sh");
+            runCommand(brevent);
         }
 
 
         public void act_airFrozen(object sender, RoutedEventArgs e)
         {
-            runCmd("adb shell dpm set-device-owner me.yourbay.airfrozen/.main.core.mgmt.MDeviceAdminReceiver");
+            runCommand(airFrozen);
         }
 
         public void act_BlackRoom(object sender, RoutedEventArgs e)
         {
-            runCmd("adb shell dpm set-device-owner web1n.stopapp/.receiver.AdminReceiver");
+            runCommand(blackRoom);
         }
 
         //TO-DO: 解决权限不足
         public void act_pmDog(object sender, RoutedEventArgs e)
         {
-            runCmd("adb shell sh /storage/emulated/0/Android/data/com.web1n.permissiondog/files/starter.sh");
+            MessageBox.Show("该功能未进行充分测试，权限狗可能会返回 \'没有权限\'。", "注意",MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            runCommand(permissionDog);
         }
 
         private void openRepo_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/hello-world-404/Helium");
+            Process.Start(repoUrl);
         }
 
         private void openRelease_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/hello-world-404/Helium/releases");
+            Process.Start(releaseUrl);
         }
 
-        public static void runCmd(string cm)
+
+        //////There is a logic problem here.
+        //The real command runner
+        public static void runCommand(string cm)
         {
             if (isVerbose)
             {
-                Process.Start("cmd", "/k " + cm);
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.Arguments = "/k " + cm;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.CreateNoWindow = true;
+                process.Start();
+                process.WaitForExit();
             }
             else
             {
-                Process.Start("cmd", "/c " + cm);
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.Arguments = "/c " + cm;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.CreateNoWindow = true;
+                process.Start();
+                process.WaitForExit();
             }
         }
 
-        private void verbose_Click(object sender, RoutedEventArgs e)
+        //Event listeners for verbose mode
+        private void verbose_Checked(object sender, RoutedEventArgs e){isVerbose = true;}
+
+        private void verbose_Unchecked(object sender, RoutedEventArgs e){isVerbose = false;}
+
+        private void checkDevice_Checked(object sender, RoutedEventArgs e)
         {
-            if (!isVerbose)
-            {
-                isVerbose = true;
-                verbose.Content = "Verbose Off";
-            }
-            else
-            {
-                isVerbose = false;
-                verbose.Content = "Verbose On";
-            }
+            needsCheckDevice = true;
         }
 
-        private void downloadAdb_Click(object sender, RoutedEventArgs e)
+        private void checkDevice_Unchecked(object sender, RoutedEventArgs e)
         {
-            using (WebClient client = new WebClient())
-            {
-                client.DownloadProgressChanged += client_DownloadProgressChanged;
-                client.DownloadFile("https://www.geshkii.xyz/sys/adb.exe", "adb.exe");
-                client.DownloadFile("https://www.geshkii.xyz/sys/AdbWinApi.dll", "AdbWinApi.dll");
-                client.DownloadFile("https://www.geshkii.xyz/sys/AdbWinUsbApi.dll", "AdbWinUsbApi.dll");
-            }
+            needsCheckDevice = false;
         }
 
-        void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        private bool checkAdbDevice()
         {
-            progressBar.Value = e.ProgressPercentage;
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.Arguments = "/c adb devices";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+
+            string res = process.StandardOutput.ReadToEnd();
+
+            process.WaitForExit();
+
+            MessageBox.Show(res, "Log", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            return true;
         }
     }
 }

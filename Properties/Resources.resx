@@ -154,6 +154,9 @@
   <data name="check_adb" xml:space="preserve">
     <value>ADB检查设备</value>
   </data>
+  <data name="check_device" xml:space="preserve">
+    <value>检查设备</value>
+  </data>
   <data name="check_fastboot" xml:space="preserve">
     <value>Fastboot检查设备</value>
   </data>
@@ -205,6 +208,12 @@
   <data name="permission_dog" xml:space="preserve">
     <value>权限狗</value>
   </data>
+  <data name="pull_file" xml:space="preserve">
+    <value>拉取文件</value>
+  </data>
+  <data name="push_file" xml:space="preserve">
+    <value>推送文件</value>
+  </data>
   <data name="reboot_bootloader" xml:space="preserve">
     <value>重启至BL</value>
   </data>
@@ -225,6 +234,9 @@
   </data>
   <data name="take_screenshot" xml:space="preserve">
     <value>截图</value>
+  </data>
+  <data name="verbose_mode" xml:space="preserve">
+    <value>啰嗦模式</value>
   </data>
   <data name="verify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
