@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using static Helium.Global;
@@ -205,6 +206,15 @@ namespace Helium
             string res = process.StandardOutput.ReadToEnd();
 
             process.WaitForExit();
+
+            if(res.Length == 24)
+            {
+                //There is no device found
+            }
+            else
+            {
+                //Extract device information
+            }
 
             MessageBox.Show(res, "Log", MessageBoxButton.OK, MessageBoxImage.Error);
 

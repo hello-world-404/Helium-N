@@ -29,4 +29,3 @@ C:\Users\carl\Documents\GitHub\Helium\obj\Release\Helium.csproj.GenerateResource
 C:\Users\carl\Documents\GitHub\Helium\obj\Release\Helium.csproj.CoreCompileInputs.cache
 C:\Users\carl\Documents\GitHub\Helium\obj\Release\Helium.exe
 C:\Users\carl\Documents\GitHub\Helium\obj\Release\Helium.pdb
-C:\Users\carl\Documents\GitHub\Helium\obj\Release\Helium.csprojAssemblyReference.cache
