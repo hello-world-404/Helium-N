@@ -121,15 +121,6 @@
   <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="about_text_line1" xml:space="preserve">
-    <value>Helium, 一个ADB工具箱。</value>
-  </data>
-  <data name="about_text_line2" xml:space="preserve">
-    <value>专为Windows 10 和 Windows 8.1 设计</value>
-  </data>
-  <data name="about_title" xml:space="preserve">
-    <value>关于</value>
-  </data>
   <data name="adb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,9 +129,6 @@
   </data>
   <data name="airfrozen" xml:space="preserve">
     <value>空调狗</value>
-  </data>
-  <data name="app_title" xml:space="preserve">
-    <value>Helium</value>
   </data>
   <data name="battery_info" xml:space="preserve">
     <value>电池信息</value>
@@ -160,9 +148,6 @@
   <data name="check_fastboot" xml:space="preserve">
     <value>Fastboot检查设备</value>
   </data>
-  <data name="copyright_info" xml:space="preserve">
-    <value>© sudo2u | MIT 许可</value>
-  </data>
   <data name="dev" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -174,12 +159,6 @@
   </data>
   <data name="flash_recovery" xml:space="preserve">
     <value>刷写REC镜像</value>
-  </data>
-  <data name="github_release" xml:space="preserve">
-    <value>Github Release</value>
-  </data>
-  <data name="github_repo" xml:space="preserve">
-    <value>Github Repo</value>
   </data>
   <data name="icebox" xml:space="preserve">
     <value>冰箱</value>
@@ -234,9 +213,6 @@
   </data>
   <data name="take_screenshot" xml:space="preserve">
     <value>截图</value>
-  </data>
-  <data name="verbose_mode" xml:space="preserve">
-    <value>啰嗦模式</value>
   </data>
   <data name="verify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

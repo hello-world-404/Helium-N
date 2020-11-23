@@ -6,9 +6,9 @@
         xmlns:loc="clr-namespace:Helium.Properties"
         xmlns:local="clr-namespace:Helium"
         mc:Ignorable="d"
-        Title="{x:Static loc:Resources.app_title}" Height="687" Width="918" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="Resources/ico.png">
+        Title="Helium" Height="466.4" Width="918" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="Resources/ico.png">
     <Grid>
-        <Grid x:Name="grid" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="912" Background="#FFECECEC" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Height="375" Margin="20,25,0,0" VerticalAlignment="Top" Width="585" Background="White" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,22 +17,11 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Grid.RenderTransform>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="53,20,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.app_title}" VerticalAlignment="Top" Foreground="#FF353535" FontSize="18"/>
-            <CheckBox x:Name="checkDevice" Content="{x:Static loc:Resources.check_device}" HorizontalAlignment="Left" Margin="815,27,0,0" VerticalAlignment="Top" Checked="checkDevice_Checked" Unchecked="checkDevice_Unchecked"/>
-        </Grid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Height="155" Margin="20,85,0,0" VerticalAlignment="Top" Width="585" Background="White" RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Grid.RenderTransform>
+            <!--
             <Grid.Effect>
                 <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
-            </Grid.Effect>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="37,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.adb_functions}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            </Grid.Effect>-->
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="45,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.adb_functions}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
             <Button x:Name="BatteryInfo" HorizontalAlignment="Left" Margin="24,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.battery_info}" Click="adb_dump_battery_data">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -53,7 +42,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="RecordScreen" HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.record_screen}" >
+            <Button x:Name="RecordScreen" HorizontalAlignment="Left" Margin="474,38,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.record_screen}" Click="RecordScreen_Click" IsEnabled="False" >
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="2"/>
@@ -83,7 +72,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Image HorizontalAlignment="Left" Height="20" Margin="18,10,0,0" VerticalAlignment="Top" Width="14" Source="Resources/adb.png"/>
+            <Image HorizontalAlignment="Left" Height="20" Margin="26,10,0,0" VerticalAlignment="Top" Width="14" Source="Resources/adb.png"/>
             <Button x:Name="PullInfo" HorizontalAlignment="Left" Margin="24,95,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.pull_file}" Click="adb_dump_battery_data">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -104,12 +93,93 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
+            <Button x:Name="adb_window" Click="others_launch_adb" HorizontalAlignment="Left" Margin="25,166,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.launch_adb_window}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="shell_window" Click="others_launch_shell" HorizontalAlignment="Left" Margin="140,166,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.launch_shell_window}" FontSize="11">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="reboot" HorizontalAlignment="Left" Margin="24,234,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_system}" Click="flash_Reboot">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="reboot_BL" Click="flash_Reboot_BL" HorizontalAlignment="Left" Margin="264,234,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_bootloader}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="reboot_Rec" Click="flash_Reboot_REC" HorizontalAlignment="Left" Margin="144,234,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_recovery}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="adb_check_device" Click="flash_Check_ADB_Devices" HorizontalAlignment="Left" Margin="24,300,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.check_adb}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="fastboot_check_device" Click="flash_Check_Fastboot_Devices" HorizontalAlignment="Left" Margin="384,234,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.check_fastboot}" FontSize="10">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="flash_recovery_image" Click="flash_Recovery_Image" HorizontalAlignment="Left" Margin="144,300,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.flash_recovery}" Background="#FFFFFF7F">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Effect >
+                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+                </Button.Effect>
+            </Button>
         </Grid>
-        <Grid x:Name="grid2" HorizontalAlignment="Left" Height="300" Margin="620,85,0,0" VerticalAlignment="Top" Width="262" Background="White">
+        <Grid x:Name="grid2" HorizontalAlignment="Left" Height="375" Margin="620,25,0,0" VerticalAlignment="Top" Width="262" Background="White">
+            <!--
             <Grid.Effect>
                 <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
-            </Grid.Effect>
-            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="29,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.service_functions}" VerticalAlignment="Top" Height="23" Width="91" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
+            </Grid.Effect>-->
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="39,21,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.service_functions}" VerticalAlignment="Top" Height="23" Width="91" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
             <Button x:Name="button"  Click="act_IceBox" HorizontalAlignment="Left" Margin="22,49,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="43" Content="{x:Static loc:Resources.icebox}">
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -170,133 +240,7 @@
                     <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
                 </Button.Effect>
             </Button>
-            <Image HorizontalAlignment="Left" Height="20" Margin="13,10,0,0" VerticalAlignment="Top" Width="17" Source="Resources/verify.png"/>
-        </Grid>
-        <Grid x:Name="grid3" HorizontalAlignment="Left" Height="190" Margin="20,260,0,0" VerticalAlignment="Top" Width="585" Background="White">
-            <Grid.Effect>
-                <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
-            </Grid.Effect>
-            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="38,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.flash_functions}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <Button x:Name="reboot" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_system}" Click="flash_Reboot">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="reboot_BL" Click="flash_Reboot_BL" HorizontalAlignment="Left" Margin="260,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_bootloader}">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="reboot_Rec" Click="flash_Reboot_REC" HorizontalAlignment="Left" Margin="140,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.reboot_recovery}">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="adb_check_device" Click="flash_Check_ADB_Devices" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.check_adb}">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="fastboot_check_device" Click="flash_Check_Fastboot_Devices" HorizontalAlignment="Left" Margin="380,45,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.check_fastboot}" FontSize="10">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="flash_recovery_image" Click="flash_Recovery_Image" HorizontalAlignment="Left" Margin="140,111,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.flash_recovery}" Background="#FFFFFF7F">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Image HorizontalAlignment="Left" Height="15" Margin="15,15,0,0" VerticalAlignment="Top" Width="18" Source="Resources/flash.png"/>
-        </Grid>
-        <Grid x:Name="grid4" HorizontalAlignment="Left" Height="220" Margin="620,400,0,0" VerticalAlignment="Top" Width="262" Background="White">
-            <Grid.Effect>
-                <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
-            </Grid.Effect>
-            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="{x:Static loc:Resources.about_title}" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <TextBlock HorizontalAlignment="Center" Margin="34,133,30,40" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" Height="47" TextAlignment="Center"><Run Text="{x:Static loc:Resources.about_text_line1}"/><LineBreak/><Run Text="专为Windows 10 和 Windows 8.1 设计"/><InlineUIContainer>
-                    <TextBlock TextWrapping="Wrap" Width="130" FontSize="9" Text="{x:Static loc:Resources.copyright_info}"/>
-                </InlineUIContainer></TextBlock>
-            <Image HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="20" Source="Resources/info.png"/>
-            <Image HorizontalAlignment="Left" Height="100" Margin="80,25,0,0" VerticalAlignment="Top" Width="100" Source="Resources/ico.png"/>
-            <Button x:Name="openRepo" Click="openRepo_Click" HorizontalAlignment="Left" Margin="30,180,0,0" VerticalAlignment="Top" Width="60" BorderBrush="Transparent" Height="25" Content="{x:Static loc:Resources.github_repo}" FontSize="8">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="openRelease" Click="openRelease_Click" HorizontalAlignment="Left" Margin="166,180,0,0" VerticalAlignment="Top" Width="60" BorderBrush="Transparent" Height="25" Content="{x:Static loc:Resources.github_release}" FontSize="7">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-        </Grid>
-        <Grid x:Name="grid5" HorizontalAlignment="Left" Height="145" Margin="20,475,0,0" VerticalAlignment="Top" Width="585" Background="White">
-            <Grid.Effect>
-                <DropShadowEffect Color="#FF707070" BlurRadius="14" Direction="275" Opacity="0.4"/>
-            </Grid.Effect>
-            <TextBlock Text="{x:Static loc:Resources.other_functions}" x:Name="textBlock5" HorizontalAlignment="Left" Margin="38,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="101" Padding="5,0,0,0" FontFamily="Segoe UI" FontSize="16"/>
-            <Button x:Name="adb_window" Click="others_launch_adb" HorizontalAlignment="Left" Margin="20,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.launch_adb_window}">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Button x:Name="shell_window" Click="others_launch_shell" HorizontalAlignment="Left" Margin="135,63,0,0" VerticalAlignment="Top" Width="96" BorderBrush="Transparent" Height="44" Content="{x:Static loc:Resources.launch_shell_window}" FontSize="11">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="2"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Effect >
-                    <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
-                </Button.Effect>
-            </Button>
-            <Image HorizontalAlignment="Left" Height="20" Margin="18,10,0,0" VerticalAlignment="Top" Width="15" Source="Resources/dev.png"/>
-
+            <Image HorizontalAlignment="Left" Height="20" Margin="23,21,0,0" VerticalAlignment="Top" Width="17" Source="Resources/verify.png"/>
         </Grid>
     </Grid>
 </Window>

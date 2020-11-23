@@ -71,33 +71,6 @@ namespace Helium.Properties {
         }
         
         /// <summary>
-        ///   查詢類似 Helium, 一个ADB工具箱。 的當地語系化字串。
-        /// </summary>
-        public static string about_text_line1 {
-            get {
-                return ResourceManager.GetString("about_text_line1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 专为Windows 10 和 Windows 8.1 设计 的當地語系化字串。
-        /// </summary>
-        public static string about_text_line2 {
-            get {
-                return ResourceManager.GetString("about_text_line2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 关于 的當地語系化字串。
-        /// </summary>
-        public static string about_title {
-            get {
-                return ResourceManager.GetString("about_title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
         public static System.Drawing.Bitmap adb {
@@ -122,15 +95,6 @@ namespace Helium.Properties {
         public static string airfrozen {
             get {
                 return ResourceManager.GetString("airfrozen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 Helium 的當地語系化字串。
-        /// </summary>
-        public static string app_title {
-            get {
-                return ResourceManager.GetString("app_title", resourceCulture);
             }
         }
         
@@ -189,15 +153,6 @@ namespace Helium.Properties {
         }
         
         /// <summary>
-        ///   查詢類似 © sudo2u | MIT 许可 的當地語系化字串。
-        /// </summary>
-        public static string copyright_info {
-            get {
-                return ResourceManager.GetString("copyright_info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
         public static System.Drawing.Bitmap dev {
@@ -232,24 +187,6 @@ namespace Helium.Properties {
         public static string flash_recovery {
             get {
                 return ResourceManager.GetString("flash_recovery", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 Github Release 的當地語系化字串。
-        /// </summary>
-        public static string github_release {
-            get {
-                return ResourceManager.GetString("github_release", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 Github Repo 的當地語系化字串。
-        /// </summary>
-        public static string github_repo {
-            get {
-                return ResourceManager.GetString("github_repo", resourceCulture);
             }
         }
         
@@ -414,15 +351,6 @@ namespace Helium.Properties {
         public static string take_screenshot {
             get {
                 return ResourceManager.GetString("take_screenshot", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類似 啰嗦模式 的當地語系化字串。
-        /// </summary>
-        public static string verbose_mode {
-            get {
-                return ResourceManager.GetString("verbose_mode", resourceCulture);
             }
         }
         

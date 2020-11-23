@@ -1,44 +1,48 @@
 ﻿using Microsoft.Win32;
-using System.Diagnostics;
-using System.Linq;
+using System;
+using System.IO;
+using System.Threading;
 using System.Windows;
-using System.Windows.Input;
 using static Helium.Global;
 
 
 namespace Helium
 {
-
     public partial class MainWindow : Window
     {
-        private static bool isVerbose;
-        private static bool needsCheckDevice;
+        //設定全局變量
+        public string logPath = System.Environment.CurrentDirectory + @"\bin\app.log";
+        private string binPath = System.Environment.CurrentDirectory + @"\bin\";
 
         public MainWindow()
         {
             InitializeComponent();
 
-            checkAdbDevice();
+            create();
+            logWrite(APP_INIT);
+
+            //Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
         }
 
 
-        ///All event handlers for click events
-
-        //ADB指令Grid命令
+        #region ADB指令
         public void adb_dump_battery_data(object sender, RoutedEventArgs e)
         {
             runCommand(dumpBattery);
+            logWrite(DMP_BAT_CLICK);
         }
 
 
         public void adb_dump_model_data(object sender, RoutedEventArgs e)
         {
             runCommand(getModel);
+            logWrite(G_MODEL_CLICK);
         }
 
         public void adb_take_screenshot(object sender, RoutedEventArgs e)
         {
             runCommand(takeScreenshot);
+            logWrite(TK_SCSHT_CLICK);
         }
 
         public void adb_install(object sender, RoutedEventArgs e)
@@ -53,43 +57,49 @@ namespace Helium
                 apkDir = dialog.FileName;
                 runCommand(installPrefix + apkDir);
             }
+            logWrite(INST_APP_CLICK);
         }
 
-        //其他指令Grid命令
         public void others_launch_adb(object sender, RoutedEventArgs e)
         {
             runCommand(launchAdb);
+            logWrite(L_ADB_CLICK);
         }
 
         public void others_launch_shell(object sender, RoutedEventArgs e)
         {
             runCommand(launchShell);
+            logWrite(L_SHELL_CLICK);
         }
 
-        //刷机指令Grid命令
         public void flash_Reboot(object sender, RoutedEventArgs e)
         {
             runCommand(Global.reboot);
+            logWrite(REBOOT_CLICK);
         }
 
         public void flash_Reboot_REC(object sender, RoutedEventArgs e)
         {
             runCommand(rebootRec);
+            logWrite(REBOOT_REC_CLICK);
         }
 
         public void flash_Check_Fastboot_Devices(object sender, RoutedEventArgs e)
         {
             runCommand(fastbootCheckDevices);
+            logWrite(FB_CHECK_DEV_CLICK);
         }
 
         public void flash_Reboot_BL(object sender, RoutedEventArgs e)
         {
             runCommand(rebootBootloader);
+            logWrite(REBOOT_BL_CLICK);
         }
 
         public void flash_Check_ADB_Devices(object sender, RoutedEventArgs e)
         {
             runCommand(getDevices);
+            logWrite(CHK_ADB_CLICK);
         }
 
         //需要测试刷Rec功能
@@ -105,31 +115,38 @@ namespace Helium
             {
                 imgDir = of.FileName;
                 runCommand("adb devices && adb reboot bootloader && fastboot devices && fastboot flash recovery " + imgDir + " fastboot reboot-bootloader + fastboot erase cache && fastboot reboot");
+                logWrite(FL_REC_IMG);
 
             }
         }
 
+        #endregion
 
-        //服务激活Grid命令
+        #region 服務激活指令
+
         public void act_IceBox(object sender, RoutedEventArgs e)
         {
             runCommand(iceBox);
+            logWrite(ICE_BOX_ACT);
         }
 
         public void act_Brevent(object sender, RoutedEventArgs e)
         {
             runCommand(brevent);
+            logWrite(BREVENT_ACT);
         }
 
 
         public void act_airFrozen(object sender, RoutedEventArgs e)
         {
             runCommand(airFrozen);
+            logWrite(AIRF_ACT);
         }
 
         public void act_BlackRoom(object sender, RoutedEventArgs e)
         {
             runCommand(blackRoom);
+            logWrite(BR_ACT);
         }
 
         //TO-DO: 解决权限不足
@@ -137,60 +154,42 @@ namespace Helium
         {
             MessageBox.Show("该功能未进行充分测试，权限狗可能会返回 \'没有权限\'。", "注意",MessageBoxButton.OK, MessageBoxImage.Exclamation);
             runCommand(permissionDog);
+            logWrite(PM_ACT);
         }
 
-        private void openRepo_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(repoUrl);
-        }
-
-        private void openRelease_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(releaseUrl);
-        }
+        #endregion
 
 
         //////There is a logic problem here.
         //The real command runner
-        public static void runCommand(string cm)
+        public void runCommand(string cm)
         {
-            if (isVerbose)
-            {
+
+            //Process with window
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
                 process.StartInfo.FileName = "cmd.exe";
                 process.StartInfo.Arguments = "/k " + cm;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.CreateNoWindow = true;
+                //process.StartInfo.CreateNoWindow = true;
                 process.Start();
                 process.WaitForExit();
-            }
-            else
-            {
-                System.Diagnostics.Process process = new System.Diagnostics.Process();
+
+                logWrite(RUN_CMD);
+                
+
+
+            //Process with window
+            /*
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
                 process.StartInfo.FileName = "cmd.exe";
                 process.StartInfo.Arguments = "/c " + cm;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.CreateNoWindow = true;
+                //process.StartInfo.CreateNoWindow = true;
                 process.Start();
                 process.WaitForExit();
-            }
-        }
-
-        //Event listeners for verbose mode
-        private void verbose_Checked(object sender, RoutedEventArgs e){isVerbose = true;}
-
-        private void verbose_Unchecked(object sender, RoutedEventArgs e){isVerbose = false;}
-
-        private void checkDevice_Checked(object sender, RoutedEventArgs e)
-        {
-            needsCheckDevice = true;
-        }
-
-        private void checkDevice_Unchecked(object sender, RoutedEventArgs e)
-        {
-            needsCheckDevice = false;
+            */
         }
 
         private bool checkAdbDevice()
@@ -202,7 +201,6 @@ namespace Helium
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
             process.Start();
-
             string res = process.StandardOutput.ReadToEnd();
 
             process.WaitForExit();
@@ -219,6 +217,54 @@ namespace Helium
             MessageBox.Show(res, "Log", MessageBoxButton.OK, MessageBoxImage.Error);
 
             return true;
+        }
+
+        /*
+        private void read()
+        {
+            if (!File.Exists(logPath))
+            {
+                create();
+                logWrite("Storage created");
+            }
+
+            if (File.Exists(logPath))
+            {
+                using (StreamReader reader = File.OpenText(logPath))
+                {
+                    string str = String.Empty;
+                    while ((str = reader.ReadLine()) != null)
+                    {
+
+
+                    }
+                }
+            }
+        }
+        */
+
+        private void create()
+        {
+            if (!Directory.Exists(binPath))
+            {
+                System.IO.Directory.CreateDirectory(binPath);
+            }
+
+            if (!Directory.Exists(logPath))
+            {
+                using (StreamWriter sw = File.CreateText(logPath)) ;
+                logWrite("Log file created");
+            }
+        }
+
+        public void logWrite(string action)
+        {
+            File.AppendAllText(logPath, DateTime.Now.ToString() + "--" + action + Environment.NewLine);
+        }
+
+        private void RecordScreen_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

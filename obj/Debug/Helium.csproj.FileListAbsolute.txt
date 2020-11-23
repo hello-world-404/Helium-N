@@ -26,3 +26,10 @@ C:\Users\carl\Documents\GitHub\Helium\obj\Debug\Helium.csproj.GenerateResource.c
 C:\Users\carl\Documents\GitHub\Helium\obj\Debug\Helium.csproj.CoreCompileInputs.cache
 C:\Users\carl\Documents\GitHub\Helium\obj\Debug\Helium.exe
 C:\Users\carl\Documents\GitHub\Helium\obj\Debug\Helium.pdb
+C:\Users\carl\Documents\GitHub\Helium\obj\Debug\Helium.csprojAssemblyReference.cache
+C:\Users\carl\Documents\GitHub\Helium\bin\Debug\zh-Hant\Helium.resources.dll
+C:\Users\carl\Documents\GitHub\Helium\obj\Debug\Helium.Properties.Resources.zh-Hant.resources
+C:\Users\carl\Documents\GitHub\Helium\obj\Debug\zh-Hant\Helium.resources.dll
+C:\Users\carl\Documents\GitHub\Helium\bin\Debug\en-US\Helium.resources.dll
+C:\Users\carl\Documents\GitHub\Helium\obj\Debug\Helium.Properties.Resources.en-US.resources
+C:\Users\carl\Documents\GitHub\Helium\obj\Debug\en-US\Helium.resources.dll
