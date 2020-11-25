@@ -5,16 +5,16 @@
 [![](https://img.shields.io/badge/lang-CSharp-green.svg?style=plastic)]()
 [![Build Status](https://travis-ci.com/hello-world-404/Helium.svg?branch=master)](https://travis-ci.com/hello-world-404/Helium)
 
-Helium 是专门为Windows 10，Windows 8.1 设计的ADB工具箱。
+Helium 是爲Windows 10和Windows 8.1設計的ADB工具箱。
 ![image](https://github.com/hello-world-404/Helium/blob/master/img/splash.png)
 
 ## 使用
-在[Releases](https://github.com/hello-world-404/Helium/releases)或[这里](https://www.geshkii.xyz/geshkii) 下载安装包，双击即可安装至系统。
+在[Releases](https://github.com/hello-world-404/Helium/releases)或[这里](https://www.geshkii.xyz/geshkii) 下載壓縮包，解壓即可使用。
 
-## 依赖
+## 依賴
 .NET Framework 4.7.2 和 ADB组件。
 
-## 开发
+## 開發
 Visual Studio 2019
 
 
