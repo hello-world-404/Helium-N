@@ -6,7 +6,7 @@
 [![Build Status](https://travis-ci.com/hello-world-404/Helium.svg?branch=master)](https://travis-ci.com/hello-world-404/Helium)
 
 Helium 是爲Windows 10和Windows 8.1設計的ADB工具箱。
-![image](https://github.com/hello-world-404/Helium/blob/master/img/splash.png)
+![image](https://github.com/hello-world-404/Helium/blob/master/img/splash.PNG)
 
 ## 使用
 在[Releases](https://github.com/hello-world-404/Helium/releases)或[这里](https://www.geshkii.xyz/geshkii) 下載壓縮包，解壓即可使用。
