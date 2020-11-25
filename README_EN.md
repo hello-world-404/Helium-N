@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.com/hello-world-404/Helium.svg?branch=master)](https://travis-ci.com/hello-world-404/Helium)
 
 Helium is a ADB toolbox designed for Windows 10 and Windows 8.1.
-![image](https://github.com/hello-world-404/Helium/blob/master/img/splash.png)
+![image](https://github.com/hello-world-404/Helium/blob/master/img/splash.PNG)
 
 ## Usage
 Download the portable package from [Releases](https://github.com/hello-world-404/Helium/releases).
