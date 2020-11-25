@@ -1,4 +1,4 @@
-
+[English version here](https://github.com/hello-world-404/Helium/blob/master/README_EN.md)
 
 # Helium
 [![](https://img.shields.io/badge/blog-@hello_world_404-blue.svg?style=plastic)](https://www.geshkii.xyz)
