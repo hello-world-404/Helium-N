@@ -80,10 +80,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -123,19 +130,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\about.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\adb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\dev.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\flash.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\info.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\verify.png" />

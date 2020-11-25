@@ -266,5 +266,11 @@ namespace Helium
         {
             
         }
+
+        private void moreBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow abt = new AboutWindow();
+            abt.Show();
+        }
     }
 }

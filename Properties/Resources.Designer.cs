@@ -63,16 +63,6 @@ namespace Helium.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        public static System.Drawing.Bitmap about {
-            get {
-                object obj = ResourceManager.GetObject("about", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
         public static System.Drawing.Bitmap adb {
             get {
                 object obj = ResourceManager.GetObject("adb", resourceCulture);
@@ -153,26 +143,6 @@ namespace Helium.Properties {
         }
         
         /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        public static System.Drawing.Bitmap dev {
-            get {
-                object obj = ResourceManager.GetObject("dev", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        public static System.Drawing.Bitmap flash {
-            get {
-                object obj = ResourceManager.GetObject("flash", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   查詢類似 刷机指令 的當地語系化字串。
         /// </summary>
         public static string flash_functions {
@@ -205,16 +175,6 @@ namespace Helium.Properties {
         public static System.Drawing.Bitmap ico {
             get {
                 object obj = ResourceManager.GetObject("ico", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        public static System.Drawing.Bitmap info {
-            get {
-                object obj = ResourceManager.GetObject("info", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
