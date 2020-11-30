@@ -63,5 +63,10 @@ namespace Helium
         public static String FL_REC_IMG = "FLASH RECOVERY IMAGE";
         #endregion
 
+        #region runMode
+        public static String RUN_MODE_VERBOSE = "/K";
+        public static String RUN_MODE_HIDDEN = "/C";
+        #endregion
+
     }
 }

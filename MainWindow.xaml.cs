@@ -20,28 +20,26 @@ namespace Helium
 
             create();
             logWrite(APP_INIT);
-
-            //Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
         }
 
 
         #region ADB指令
         public void adb_dump_battery_data(object sender, RoutedEventArgs e)
         {
-            runCommand(dumpBattery);
+            runCommand(dumpBattery, RUN_MODE_VERBOSE);
             logWrite(DMP_BAT_CLICK);
         }
 
 
         public void adb_dump_model_data(object sender, RoutedEventArgs e)
         {
-            runCommand(getModel);
+            runCommand(getModel, RUN_MODE_VERBOSE);
             logWrite(G_MODEL_CLICK);
         }
 
         public void adb_take_screenshot(object sender, RoutedEventArgs e)
         {
-            runCommand(takeScreenshot);
+            runCommand(takeScreenshot, RUN_MODE_VERBOSE);
             logWrite(TK_SCSHT_CLICK);
         }
 
@@ -55,50 +53,50 @@ namespace Helium
             if ((bool)dialog.ShowDialog())
             {
                 apkDir = dialog.FileName;
-                runCommand(installPrefix + apkDir);
+                runCommand(installPrefix + apkDir, RUN_MODE_VERBOSE);
             }
             logWrite(INST_APP_CLICK);
         }
 
         public void others_launch_adb(object sender, RoutedEventArgs e)
         {
-            runCommand(launchAdb);
+            runCommand(launchAdb, RUN_MODE_VERBOSE);
             logWrite(L_ADB_CLICK);
         }
 
         public void others_launch_shell(object sender, RoutedEventArgs e)
         {
-            runCommand(launchShell);
+            runCommand(launchShell, RUN_MODE_VERBOSE);
             logWrite(L_SHELL_CLICK);
         }
 
         public void flash_Reboot(object sender, RoutedEventArgs e)
         {
-            runCommand(Global.reboot);
+            runCommand(Global.reboot, RUN_MODE_HIDDEN);
             logWrite(REBOOT_CLICK);
         }
 
         public void flash_Reboot_REC(object sender, RoutedEventArgs e)
         {
-            runCommand(rebootRec);
+            runCommand(rebootRec, RUN_MODE_HIDDEN);
             logWrite(REBOOT_REC_CLICK);
         }
 
         public void flash_Check_Fastboot_Devices(object sender, RoutedEventArgs e)
         {
-            runCommand(fastbootCheckDevices);
+            runCommand(fastbootCheckDevices, RUN_MODE_VERBOSE);
             logWrite(FB_CHECK_DEV_CLICK);
         }
 
         public void flash_Reboot_BL(object sender, RoutedEventArgs e)
         {
-            runCommand(rebootBootloader);
+            runCommand(rebootBootloader, RUN_MODE_HIDDEN);
             logWrite(REBOOT_BL_CLICK);
         }
 
         public void flash_Check_ADB_Devices(object sender, RoutedEventArgs e)
         {
-            runCommand(getDevices);
+            runCommand(getDevices, RUN_MODE_VERBOSE);
             logWrite(CHK_ADB_CLICK);
         }
 
@@ -114,7 +112,7 @@ namespace Helium
             if ((bool)of.ShowDialog())
             {
                 imgDir = of.FileName;
-                runCommand("adb devices && adb reboot bootloader && fastboot devices && fastboot flash recovery " + imgDir + " fastboot reboot-bootloader + fastboot erase cache && fastboot reboot");
+                runCommand("adb devices && adb reboot bootloader && fastboot devices && fastboot flash recovery " + imgDir + " fastboot reboot-bootloader + fastboot erase cache && fastboot reboot", RUN_MODE_VERBOSE);
                 logWrite(FL_REC_IMG);
 
             }
@@ -126,26 +124,26 @@ namespace Helium
 
         public void act_IceBox(object sender, RoutedEventArgs e)
         {
-            runCommand(iceBox);
+            runCommand(iceBox, RUN_MODE_VERBOSE);
             logWrite(ICE_BOX_ACT);
         }
 
         public void act_Brevent(object sender, RoutedEventArgs e)
         {
-            runCommand(brevent);
+            runCommand(brevent,RUN_MODE_VERBOSE);
             logWrite(BREVENT_ACT);
         }
 
 
         public void act_airFrozen(object sender, RoutedEventArgs e)
         {
-            runCommand(airFrozen);
+            runCommand(airFrozen, RUN_MODE_VERBOSE);
             logWrite(AIRF_ACT);
         }
 
         public void act_BlackRoom(object sender, RoutedEventArgs e)
         {
-            runCommand(blackRoom);
+            runCommand(blackRoom, RUN_MODE_VERBOSE);
             logWrite(BR_ACT);
         }
 
@@ -153,7 +151,7 @@ namespace Helium
         public void act_pmDog(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("该功能未进行充分测试，权限狗可能会返回 \'没有权限\'。", "注意",MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            runCommand(permissionDog);
+            runCommand(permissionDog, RUN_MODE_VERBOSE);
             logWrite(PM_ACT);
         }
 
@@ -162,36 +160,26 @@ namespace Helium
 
         //////There is a logic problem here.
         //The real command runner
-        public void runCommand(string cm)
+        public void runCommand(string cm, string runMode)
         {
 
-            //Process with window
-                System.Diagnostics.Process process = new System.Diagnostics.Process();
-                process.StartInfo.FileName = "cmd.exe";
-                process.StartInfo.Arguments = "/k " + cm;
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.RedirectStandardOutput = true;
-                //process.StartInfo.CreateNoWindow = true;
-                process.Start();
-                process.WaitForExit();
-
-                logWrite(RUN_CMD);
-                
-
-
-            //Process with window
-            /*
             System.Diagnostics.Process process = new System.Diagnostics.Process();
-                process.StartInfo.FileName = "cmd.exe";
-                process.StartInfo.Arguments = "/c " + cm;
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.RedirectStandardOutput = true;
-                //process.StartInfo.CreateNoWindow = true;
-                process.Start();
-                process.WaitForExit();
-            */
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            if (runMode.Equals(RUN_MODE_VERBOSE))
+            {
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+            }
+            else
+            {
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            }
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = runMode + cm;
+            process.StartInfo = startInfo;
+            process.Start();
         }
 
+        /*
         private bool checkAdbDevice()
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
@@ -218,6 +206,7 @@ namespace Helium
 
             return true;
         }
+        */
 
         /*
         private void read()
