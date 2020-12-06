@@ -1,7 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.IO;
-using System.Threading;
 using System.Windows;
 using static Helium.Global;
 
@@ -17,7 +16,6 @@ namespace Helium
         public MainWindow()
         {
             InitializeComponent();
-
             create();
             logWrite(APP_INIT);
         }
@@ -260,6 +258,14 @@ namespace Helium
         {
             AboutWindow abt = new AboutWindow();
             abt.Show();
+        }
+
+
+        //Launches the about window
+        private void aboutApp_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow nw = new AboutWindow();
+            nw.Show();
         }
     }
 }

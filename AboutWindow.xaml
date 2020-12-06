@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Helium"
+        xmlns:loc="clr-namespace:Helium.Properties"
         mc:Ignorable="d"
-        Title="AboutWindow" Height="450" Width="800">
+        Title="{x:Static loc:Resources.about_title}" Height="432" Width="429" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid>
-        
+        <Image HorizontalAlignment="Left" Height="100" Margin="159,120,0,0" VerticalAlignment="Top" Width="100" Source="icon.ico"/>
+        <Label Content="{x:Static loc:Resources.app_name}" HorizontalAlignment="Left" Margin="179,220,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="{x:Static loc:Resources.license_info}" HorizontalAlignment="Left" Margin="130,250,0,0" VerticalAlignment="Top"/>
+        <Label Content="{x:Static loc:Resources.copyright_info}" HorizontalAlignment="Left" Margin="144,280,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

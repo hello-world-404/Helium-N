@@ -68,5 +68,9 @@ namespace Helium
         public static String RUN_MODE_HIDDEN = "/C";
         #endregion
 
+        #region statusCommands
+        public static String dumpBattery = "";
+        #endregion
+
     }
 }

@@ -61,6 +61,24 @@ namespace Helium.Properties {
         }
         
         /// <summary>
+        ///   查詢類似 关于 的當地語系化字串。
+        /// </summary>
+        public static string about_app {
+            get {
+                return ResourceManager.GetString("about_app", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 关于Helium 的當地語系化字串。
+        /// </summary>
+        public static string about_title {
+            get {
+                return ResourceManager.GetString("about_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
         public static System.Drawing.Bitmap adb {
@@ -85,6 +103,15 @@ namespace Helium.Properties {
         public static string airfrozen {
             get {
                 return ResourceManager.GetString("airfrozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 Helium 的當地語系化字串。
+        /// </summary>
+        public static string app_name {
+            get {
+                return ResourceManager.GetString("app_name", resourceCulture);
             }
         }
         
@@ -139,6 +166,15 @@ namespace Helium.Properties {
         public static string check_fastboot {
             get {
                 return ResourceManager.GetString("check_fastboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 © sudo2u 2018-2020 的當地語系化字串。
+        /// </summary>
+        public static string copyright_info {
+            get {
+                return ResourceManager.GetString("copyright_info", resourceCulture);
             }
         }
         
@@ -203,6 +239,15 @@ namespace Helium.Properties {
         public static string launch_shell_window {
             get {
                 return ResourceManager.GetString("launch_shell_window", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 Helium 遵循MIT许可证发布 的當地語系化字串。
+        /// </summary>
+        public static string license_info {
+            get {
+                return ResourceManager.GetString("license_info", resourceCulture);
             }
         }
         
@@ -302,6 +347,15 @@ namespace Helium.Properties {
         public static string shizuku {
             get {
                 return ResourceManager.GetString("shizuku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 状态 的當地語系化字串。
+        /// </summary>
+        public static string status_placeholder {
+            get {
+                return ResourceManager.GetString("status_placeholder", resourceCulture);
             }
         }
         

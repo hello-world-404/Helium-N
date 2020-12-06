@@ -195,5 +195,16 @@
             </Button>
             <Image HorizontalAlignment="Left" Height="20" Margin="22,10,0,0" VerticalAlignment="Top" Width="17" Source="Resources/verify.png"/>
         </Grid>
+        <Button x:Name="aboutApp" Content="{x:Static loc:Resources.about_app}" HorizontalAlignment="Left" Margin="807,386,0,0" VerticalAlignment="Top" Width="75" BorderBrush="Transparent" Click="aboutApp_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="2"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect >
+                <DropShadowEffect Color="#FF707070" BlurRadius="5" Direction="280" Opacity="0.2"/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="statusLabel" Content="{x:Static loc:Resources.status_placeholder}" HorizontalAlignment="Left" Margin="20,375,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
