@@ -1,4 +1,4 @@
-# 注意：此版本的Helium将不会再被更新，想要使用新的Helium，请移步至：
+# 注意：此版本的Helium将不会再被更新，想要使用新的Helium，请移步至：https://github.com/hello-world-404/HeliumE
 
 [English version here](https://github.com/hello-world-404/Helium/blob/master/README_EN.md)
 
